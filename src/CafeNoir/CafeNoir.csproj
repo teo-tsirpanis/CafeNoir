@@ -6,4 +6,10 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="devexpress.win.design" Version="21.2.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CafeNoir.Core\CafeNoir.Core.csproj" />
+  </ItemGroup>
 </Project>
