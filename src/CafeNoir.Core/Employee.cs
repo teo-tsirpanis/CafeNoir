@@ -6,13 +6,6 @@ using System.Threading.Tasks;
 
 namespace CafeNoir.Core {
 
-
-    public enum EmployeeType {
-        Magager,
-        Cashier,
-        Barista,
-        Waiter
-    }
     public class Employee {
 
 
