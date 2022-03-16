@@ -1,6 +1,6 @@
 ﻿namespace CafeNoir.Core;
 
-public enum ProductTypeEnum {
+public enum ProductType {
     Coffee,
     Beverages,
     Food
