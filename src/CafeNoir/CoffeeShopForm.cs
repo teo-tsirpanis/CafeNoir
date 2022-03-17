@@ -48,27 +48,28 @@ public partial class CoffeeShopForm : Form {
         MessageBox.Show("File Written");
     }
     private void listToolStripMenuItem_Click(object sender, EventArgs e) {
-        LoadData();
-        CustomerForm customerForm = new CustomerForm();
-        customerForm.CoffeeShop = _coffeeshop;
-        customerForm.ShowDialog();
-    }
-    private void productCategoryListToolStripMenuItem_Click(object sender, EventArgs e) {
-        var productCategoryForm = new ProductCategoryForm(FILE_NAME) {
-            CoffeeShop = _coffeeshop
-        };
-        productCategoryForm.Show();
-    }
-    #endregion
-
-
-    private void listToolStripMenuItem_Click(object sender, EventArgs e) {
-
         LoadData(false);
         CustomerForm customerForm = new CustomerForm();
         customerForm.CoffeeShop = _coffeeshop;
         customerForm.ShowDialog();
     }
+    private void productCategoryListToolStripMenuItem_Click(object sender, EventArgs e) {
+        LoadData(false);
+        var productCategoryForm = new ProductCategoryForm(FILE_NAME) {
+            CoffeeShop = _coffeeshop
+        };
+        productCategoryForm.Show();
+    }
+   
+
+
+    //private void listToolStripMenuItem_Click(object sender, EventArgs e) {
+
+    //    LoadData(false);
+    //    CustomerForm customerForm = new CustomerForm();
+    //    customerForm.CoffeeShop = _coffeeshop;
+    //    customerForm.ShowDialog();
+    //}
 
     private void dayCustomerCountToolStripMenuItem_Click(object sender, EventArgs e) {
         MessageBox.Show($"Today's Customers: {_coffeeshop.CustomersToday}");
@@ -126,6 +127,8 @@ public partial class CoffeeShopForm : Form {
             $"Cashiers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Cashier)}, " +
             $"Baristas: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Barista)}, " +
             $"Waiters: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Waiter)}, " +
+            $"Product Categories: {_coffeeshop.ProductCats.Count} "+
+            $"Products: {_coffeeshop.Products.Count} "+
             $"Active Customer: {_coffeeshop.Customers.Count} " +
             $"Customers today: {_coffeeshop.CustomersToday}");
     }
