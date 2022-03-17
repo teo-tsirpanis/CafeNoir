@@ -18,6 +18,10 @@ public partial class CoffeeShopForm : Form
     private void CoffeeShopForm_Load(object sender, EventArgs e) {
         
         saveToolStripMenuItem.Enabled = false;
+        newDayToolStripMenuItem.Enabled = false;
+        todaysCustomerToolStripMenuItem.Enabled = false;
+        coffeeShopStatusToolStripMenuItem.Enabled=false;
+        
 
 
         //CoffeeShop cf = new CoffeeShop();
@@ -37,44 +41,84 @@ public partial class CoffeeShopForm : Form
 
 
 
-
-
     private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
-        LoadData();
-        MessageBox.Show(this, $"Managers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Magager)}, " +
-            $"Cashiers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Cashier)}, " +
-            $"Baristas: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Barista)}, " +
-            $"Waiters: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Waiter)}, " + 
-            $"Customers: {_coffeeshop.Customers.Count}");
+        LoadData(true);
+        
 
     }
 
     private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
         SaveData();
-        MessageBox.Show("Saved");
+        MessageBox.Show("File Written");
     }
 
 
+    private void listToolStripMenuItem_Click(object sender, EventArgs e) {
 
-    public void LoadData() {
+        LoadData(false);
+        CustomerForm customerForm = new CustomerForm();
+        customerForm.CoffeeShop = _coffeeshop;
+        customerForm.ShowDialog();
+    }
 
-        string json = File.ReadAllText(FILE_NAME);
-        _coffeeshop = JsonSerializer.Deserialize<CoffeeShop>(json);
+    private void dayCustomerCountToolStripMenuItem_Click(object sender, EventArgs e) {
+        MessageBox.Show($"Today's Customers: {_coffeeshop.CustomersToday}");
+    }
+
+    private void newDayToolStripMenuItem_Click(object sender, EventArgs e) {
+        _coffeeshop.CustomersToday = 0;
+        if(_coffeeshop.Customers.Count == 1) {
+            _coffeeshop.Customers.Remove(_coffeeshop.Customers.Last());
+        }
+
+        SaveData();
+        MessageBox.Show("New day.!!");
+    }
+
+
+    private void CoffeeShopInitialize() {
+        CoffeeShop cf = new CoffeeShop();
+        _coffeeshop = cf;
+    }
+
+
+    public void LoadData(bool m ) {
+
+        try {
+           string json = File.ReadAllText(FILE_NAME);
+           _coffeeshop = JsonSerializer.Deserialize<CoffeeShop>(json);
+            if (m == true) {
+                MessageBox.Show("Load Succefull");
+            }
+                
+            
+        }
+        catch (Exception) {
+            MessageBox.Show("File Not Found, New File Created");
+            CoffeeShopInitialize();
+            //throw;
+        }
+
         saveToolStripMenuItem.Enabled = true;
+        coffeeShopStatusToolStripMenuItem.Enabled = true;
+        newDayToolStripMenuItem.Enabled = true;
+        todaysCustomerToolStripMenuItem.Enabled = true;
+
 
 
     }
-
 
     public void SaveData() {
         string json = JsonSerializer.Serialize(_coffeeshop);
         File.WriteAllText(FILE_NAME, json);
     }
 
-    private void listToolStripMenuItem_Click(object sender, EventArgs e) {
-        LoadData();
-        CustomerForm customerForm = new CustomerForm();
-        customerForm.CoffeeShop = _coffeeshop;
-        customerForm.ShowDialog();
+    private void coffeeShopStatusToolStripMenuItem_Click(object sender, EventArgs e) {
+        MessageBox.Show(this, $"Managers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Magager)}, " +
+            $"Cashiers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Cashier)}, " +
+            $"Baristas: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Barista)}, " +
+            $"Waiters: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Waiter)}, " +
+            $"Active Customer: {_coffeeshop.Customers.Count} " +
+            $"Customers today: {_coffeeshop.CustomersToday}");
     }
 }

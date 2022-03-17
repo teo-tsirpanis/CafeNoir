@@ -11,13 +11,14 @@ public class Customer {
     public string Code { get; set; }
     public string Description { get; set; } = string.Empty;
 
-    public static Customer RetailCustomer { get; } = new Customer("001")
-    {
-        Description = "Retail Customer"
-    };
+    //public static Customer RetailCustomer { get; } = new Customer("001")
+    //{
+    //    Description = "Retail Customer"
+    //};
 
     public Customer(string code) {
         Code=code;
+        Description = "Retail Customer";
     }
 
 
