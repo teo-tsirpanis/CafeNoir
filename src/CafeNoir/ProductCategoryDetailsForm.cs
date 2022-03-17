@@ -4,9 +4,9 @@ using DevExpress.XtraEditors.Controls;
 using System.IO;
 using System.Text.Json;
 
-namespace CafeNoir; 
+namespace CafeNoir;
 public partial class ProductCategoryDetailsForm : Form {
-    private string FILE_NAME ;
+    private string FILE_NAME;
     private string _formName = "New Product Category";
 
     private ProductCategory _changedProductCategory;
@@ -74,17 +74,8 @@ public partial class ProductCategoryDetailsForm : Form {
         }
     }
     private void PopulateControls() {
-        Dictionary<ProductType, string> types = new Dictionary<ProductType, string>();
-        types.Add(ProductType.Coffee, "Coofee");
-        types.Add(ProductType.Beverages, "Beverage");
-        types.Add(ProductType.Food, "Food");
-
-
-        ctrlType.Properties.DataSource = types;
-        ctrlType.Properties.Columns.Add(new LookUpColumnInfo("Value"));
-        ctrlType.Properties.DisplayMember = "Value";
-        ctrlType.Properties.ValueMember = "Key";
-        ctrlType.Properties.ShowHeader = false;
+        var controlsHelper = new ControlsHelper();
+        controlsHelper.PopulateProductType(ctrlType.Properties);
     }
     #endregion
 
