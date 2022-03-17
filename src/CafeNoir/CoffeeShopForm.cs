@@ -13,7 +13,7 @@ public partial class CoffeeShopForm : Form {
     }
     private void CoffeeShopForm_Load(object sender, EventArgs e) {
         LoadData();
-        saveToolStripMenuItem.Enabled = false;
+        //saveToolStripMenuItem.Enabled = false;
     }
     #region UI
     private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
