@@ -4,47 +4,26 @@ using System.Text.Json;
 
 namespace CafeNoir;
 
-public partial class CoffeeShopForm : Form
-{
+public partial class CoffeeShopForm : Form {
     private const string FILE_NAME = "coffeeshop.json";
     private CoffeeShop _coffeeshop;
 
 
-    public CoffeeShopForm()
-    {
+    public CoffeeShopForm() {
         InitializeComponent();
     }
 
     private void CoffeeShopForm_Load(object sender, EventArgs e) {
-        
+        LoadData();
         saveToolStripMenuItem.Enabled = false;
-
-
-        //CoffeeShop cf = new CoffeeShop();
-        //Customer c = new Customer("001");
-        //Product p = new Product();
-        //ProductCategory pc = new ProductCategory();
-        //Employee em = new Employee();
-        //cf.Customers.Add(c);
-        //cf.Products.Add(p);
-        //cf.ProductCats.Add(pc); 
-        //cf.Employess.Add(em);
-        //string json = JsonSerializer.Serialize(cf);
-        //File.WriteAllText(FILE_NAME, json);
     }
-
-
-
-
-
-
 
     private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
         LoadData();
         MessageBox.Show(this, $"Managers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Magager)}, " +
             $"Cashiers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Cashier)}, " +
             $"Baristas: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Barista)}, " +
-            $"Waiters: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Waiter)}, " + 
+            $"Waiters: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Waiter)}, " +
             $"Customers: {_coffeeshop.Customers.Count}");
 
     }
@@ -54,14 +33,21 @@ public partial class CoffeeShopForm : Form
         MessageBox.Show("Saved");
     }
 
-
-
     public void LoadData() {
 
+        if (!File.Exists(FILE_NAME)) {
+            using (File.Create(FILE_NAME)) ;
+        }
         string json = File.ReadAllText(FILE_NAME);
-        _coffeeshop = JsonSerializer.Deserialize<CoffeeShop>(json);
-        saveToolStripMenuItem.Enabled = true;
 
+        try {
+            _coffeeshop = JsonSerializer.Deserialize<CoffeeShop>(json);
+            saveToolStripMenuItem.Enabled = true;
+        }
+        catch (Exception) {
+            _coffeeshop = new CoffeeShop();
+            SaveData();
+        }
 
     }
 
