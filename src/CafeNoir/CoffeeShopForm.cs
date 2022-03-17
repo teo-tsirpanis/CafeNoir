@@ -4,18 +4,15 @@ using System.Text.Json;
 
 namespace CafeNoir;
 
-public partial class CoffeeShopForm : Form
-{
+public partial class CoffeeShopForm : Form {
     private const string FILE_NAME = "coffeeshop.json";
     private CoffeeShop _coffeeshop;
 
-
-    public CoffeeShopForm()
-    {
+    public CoffeeShopForm() {
         InitializeComponent();
     }
-
     private void CoffeeShopForm_Load(object sender, EventArgs e) {
+
         
         saveToolStripMenuItem.Enabled = false;
         newDayToolStripMenuItem.Enabled = false;
@@ -46,11 +43,23 @@ public partial class CoffeeShopForm : Form
         
 
     }
-
     private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
         SaveData();
         MessageBox.Show("File Written");
     }
+    private void listToolStripMenuItem_Click(object sender, EventArgs e) {
+        LoadData();
+        CustomerForm customerForm = new CustomerForm();
+        customerForm.CoffeeShop = _coffeeshop;
+        customerForm.ShowDialog();
+    }
+    private void productCategoryListToolStripMenuItem_Click(object sender, EventArgs e) {
+        var productCategoryForm = new ProductCategoryForm(FILE_NAME) {
+            CoffeeShop = _coffeeshop
+        };
+        productCategoryForm.Show();
+    }
+    #endregion
 
 
     private void listToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -104,14 +113,13 @@ public partial class CoffeeShopForm : Form
         newDayToolStripMenuItem.Enabled = true;
         todaysCustomerToolStripMenuItem.Enabled = true;
 
-
-
     }
 
     public void SaveData() {
         string json = JsonSerializer.Serialize(_coffeeshop);
         File.WriteAllText(FILE_NAME, json);
     }
+
 
     private void coffeeShopStatusToolStripMenuItem_Click(object sender, EventArgs e) {
         MessageBox.Show(this, $"Managers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Magager)}, " +

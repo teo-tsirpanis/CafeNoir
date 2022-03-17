@@ -1,5 +1,5 @@
 ﻿
-namespace CafeNoir.Core; 
+namespace CafeNoir.Core;
 
 public class ProductCategory {
     public Guid ID { get; } = Guid.NewGuid();
@@ -8,7 +8,8 @@ public class ProductCategory {
     public ProductType ProductType { get; set; }
     public ProductCategory() {
 
-
-  
+    }
+    public ProductCategory ShallowCopy() {
+        return (ProductCategory)MemberwiseClone();
     }
 }
