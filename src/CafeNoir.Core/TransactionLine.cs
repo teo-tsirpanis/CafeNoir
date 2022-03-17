@@ -19,7 +19,7 @@ public class TransactionLine {
         Quantity = quantity;
         Price = price;
         DiscountPerCent = discountPerCent;
-        TotalPrice = Quantity * Price;
+        TotalPrice = (Quantity * Price) - (Quantity * Price)*discountPerCent;
     }
     public TransactionLine(Guid productID, int quantity, decimal price, decimal discountPerCent, decimal totalPrice) : this() {
         ProductID = productID;
