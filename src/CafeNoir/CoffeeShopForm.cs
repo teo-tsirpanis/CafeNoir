@@ -31,7 +31,7 @@ public partial class CoffeeShopForm : Form {
         customerForm.ShowDialog();
     }
     private void productCategoryListToolStripMenuItem_Click(object sender, EventArgs e) {
-        var productCategoryForm = new ProductCategoryForm() {
+        var productCategoryForm = new ProductCategoryForm(FILE_NAME) {
             CoffeeShop = _coffeeshop
         };
         productCategoryForm.Show();
