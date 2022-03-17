@@ -7,7 +7,7 @@ namespace CafeNoir;
 internal class ControlsHelper {
     public void PopulateProductType(RepositoryItemLookUpEdit lookup) {
         Dictionary<ProductType, string> types = new Dictionary<ProductType, string>();
-        types.Add(ProductType.Coffee, "Coofee");
+        types.Add(ProductType.Coffee, "Coffee");
         types.Add(ProductType.Beverages, "Beverage");
         types.Add(ProductType.Food, "Food");
 
