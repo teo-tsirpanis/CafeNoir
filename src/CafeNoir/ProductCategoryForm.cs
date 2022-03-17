@@ -10,12 +10,13 @@ public partial class ProductCategoryForm : Form {
     public CoffeeShop CoffeeShop { get; set; }
     private string FILE_NAME;
     public ProductCategoryForm(string file_name) {
-        FILE_NAME= file_name;
+        FILE_NAME = file_name;
         InitializeComponent();
     }
 
     private void ProductCategoryForm_Load(object sender, EventArgs e) {
         this.Text = _formName;
+        PopulateControls();
         SetUpBindings();
     }
     #region UI
@@ -40,14 +41,14 @@ public partial class ProductCategoryForm : Form {
         var coffeeShop = bsCoffeeShop.Current as CoffeeShop;
         var productCategoryDetailsForm = new ProductCategoryDetailsForm(coffeeShop, FILE_NAME);
         productCategoryDetailsForm.ShowDialog();
-        gridView1.RefreshData();
+        grdProductCategories.RefreshData();
     }
     private void OpenDetailsPage(ProductCategory currentProductCategory) {
-        if(currentProductCategory != null) {
+        if (currentProductCategory != null) {
             var coffeeShop = bsCoffeeShop.Current as CoffeeShop;
             var productCategoryDetailsForm = new ProductCategoryDetailsForm(coffeeShop, FILE_NAME, currentProductCategory);
             productCategoryDetailsForm.ShowDialog();
-            gridView1.RefreshData();
+            grdProductCategories.RefreshData();
         }
     }
     private void CloseForm() {
@@ -74,6 +75,10 @@ public partial class ProductCategoryForm : Form {
         var coffeeShop = bsCoffeeShop.Current as CoffeeShop;
         string json = JsonSerializer.Serialize(coffeeShop);
         File.WriteAllText(FILE_NAME, json);
+    }
+    private void PopulateControls() {
+        var controlsHelper = new ControlsHelper();
+        controlsHelper.PopulateProductType(repType);
     }
     #endregion
 

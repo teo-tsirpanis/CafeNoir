@@ -30,10 +30,11 @@
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlProductCategories = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grdProductCategories = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -46,7 +47,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProductCategories)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProductCategories)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -116,22 +118,24 @@
             // gridControlProductCategories
             // 
             this.gridControlProductCategories.Location = new System.Drawing.Point(12, 12);
-            this.gridControlProductCategories.MainView = this.gridView1;
+            this.gridControlProductCategories.MainView = this.grdProductCategories;
             this.gridControlProductCategories.Name = "gridControlProductCategories";
+            this.gridControlProductCategories.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repType});
             this.gridControlProductCategories.Size = new System.Drawing.Size(776, 400);
             this.gridControlProductCategories.TabIndex = 0;
             this.gridControlProductCategories.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.grdProductCategories});
             // 
-            // gridView1
+            // grdProductCategories
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.grdProductCategories.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colCode,
             this.colDescription,
             this.colType});
-            this.gridView1.GridControl = this.gridControlProductCategories;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
+            this.grdProductCategories.GridControl = this.gridControlProductCategories;
+            this.grdProductCategories.Name = "grdProductCategories";
+            this.grdProductCategories.OptionsBehavior.Editable = false;
             // 
             // colCode
             // 
@@ -140,6 +144,7 @@
             this.colCode.Name = "colCode";
             this.colCode.Visible = true;
             this.colCode.VisibleIndex = 0;
+            this.colCode.Width = 250;
             // 
             // colDescription
             // 
@@ -148,14 +153,23 @@
             this.colDescription.Name = "colDescription";
             this.colDescription.Visible = true;
             this.colDescription.VisibleIndex = 1;
+            this.colDescription.Width = 250;
             // 
             // colType
             // 
             this.colType.Caption = "Type";
+            this.colType.ColumnEdit = this.repType;
             this.colType.FieldName = "ProductType";
             this.colType.Name = "colType";
             this.colType.Visible = true;
             this.colType.VisibleIndex = 2;
+            // 
+            // repType
+            // 
+            this.repType.AutoHeight = false;
+            this.repType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repType.Name = "repType";
             // 
             // Root
             // 
@@ -237,7 +251,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProductCategories)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProductCategories)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -259,7 +274,7 @@
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SimpleButton btnNew;
         private DevExpress.XtraGrid.GridControl gridControlProductCategories;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdProductCategories;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -272,5 +287,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colType;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repType;
     }
 }
