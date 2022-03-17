@@ -11,3 +11,7 @@ public enum EmployeeType {
     Barista,
     Waiter
 }
+public enum PaymentMethod {
+    Cash,
+    CreditCard
+}
