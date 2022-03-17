@@ -30,6 +30,12 @@ public partial class CoffeeShopForm : Form {
         customerForm.CoffeeShop = _coffeeshop;
         customerForm.ShowDialog();
     }
+    private void productCategoryListToolStripMenuItem_Click(object sender, EventArgs e) {
+        var productCategoryForm = new ProductCategoryForm() {
+            CoffeeShop = _coffeeshop
+        };
+        productCategoryForm.Show();
+    }
     #endregion
 
     #region Methods
