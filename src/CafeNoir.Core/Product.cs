@@ -12,7 +12,7 @@ namespace CafeNoir.Core {
 
 
         public Product() {
-
+            ID = Guid.NewGuid();
         }
     }
 }
