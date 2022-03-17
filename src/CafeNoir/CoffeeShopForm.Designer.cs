@@ -32,6 +32,9 @@ partial class CoffeeShopForm
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.todaysCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newDayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.coffeeShopStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +58,10 @@ partial class CoffeeShopForm
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadToolStripMenuItem,
-            this.saveToolStripMenuItem});
+            this.saveToolStripMenuItem,
+            this.todaysCustomerToolStripMenuItem,
+            this.newDayToolStripMenuItem,
+            this.coffeeShopStatusToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -73,6 +79,27 @@ partial class CoffeeShopForm
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // todaysCustomerToolStripMenuItem
+            // 
+            this.todaysCustomerToolStripMenuItem.Name = "todaysCustomerToolStripMenuItem";
+            this.todaysCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.todaysCustomerToolStripMenuItem.Text = "Today\'s Customers";
+            this.todaysCustomerToolStripMenuItem.Click += new System.EventHandler(this.dayCustomerCountToolStripMenuItem_Click);
+            // 
+            // newDayToolStripMenuItem
+            // 
+            this.newDayToolStripMenuItem.Name = "newDayToolStripMenuItem";
+            this.newDayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newDayToolStripMenuItem.Text = "New Day";
+            this.newDayToolStripMenuItem.Click += new System.EventHandler(this.newDayToolStripMenuItem_Click);
+            // 
+            // coffeeShopStatusToolStripMenuItem
+            // 
+            this.coffeeShopStatusToolStripMenuItem.Name = "coffeeShopStatusToolStripMenuItem";
+            this.coffeeShopStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.coffeeShopStatusToolStripMenuItem.Text = "CoffeeShop Status";
+            this.coffeeShopStatusToolStripMenuItem.Click += new System.EventHandler(this.coffeeShopStatusToolStripMenuItem_Click);
             // 
             // customersToolStripMenuItem
             // 
@@ -129,6 +156,12 @@ partial class CoffeeShopForm
     private ToolStripMenuItem saveToolStripMenuItem;
     private ToolStripMenuItem customersToolStripMenuItem;
     private ToolStripMenuItem listToolStripMenuItem;
+
     private ToolStripMenuItem productCategoriesToolStripMenuItem;
     private ToolStripMenuItem productCategoryListToolStripMenuItem;
+
+    private ToolStripMenuItem todaysCustomerToolStripMenuItem;
+    private ToolStripMenuItem newDayToolStripMenuItem;
+    private ToolStripMenuItem coffeeShopStatusToolStripMenuItem;
+
 }

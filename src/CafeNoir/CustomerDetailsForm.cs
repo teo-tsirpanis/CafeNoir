@@ -28,7 +28,8 @@ namespace CafeNoir {
         private void CustomerDetailsForm_Load(object sender, EventArgs e) {
 
             if (Customer == null) {
-                Customer = new Customer("005");
+                CoffeeShop.CustomersToday++;
+                Customer = new Customer($"00{CoffeeShop.CustomersToday}");
                 CoffeeShop.Customers.Add(Customer);
             }
 

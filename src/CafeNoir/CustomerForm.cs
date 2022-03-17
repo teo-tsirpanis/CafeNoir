@@ -79,5 +79,9 @@ namespace CafeNoir {
             gridView1.RefreshData();
 
         }
+
+        private void btnSave_Click(object sender, EventArgs e) {
+            SaveData();
+        }
     }
 }

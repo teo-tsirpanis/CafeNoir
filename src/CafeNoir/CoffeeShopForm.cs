@@ -12,17 +12,40 @@ public partial class CoffeeShopForm : Form {
         InitializeComponent();
     }
     private void CoffeeShopForm_Load(object sender, EventArgs e) {
-        LoadData();
-        //saveToolStripMenuItem.Enabled = false;
+
+        
+        saveToolStripMenuItem.Enabled = false;
+        newDayToolStripMenuItem.Enabled = false;
+        todaysCustomerToolStripMenuItem.Enabled = false;
+        coffeeShopStatusToolStripMenuItem.Enabled=false;
+        
+
+
+        //CoffeeShop cf = new CoffeeShop();
+        //Customer c = new Customer("001");
+        //Product p = new Product();
+        //ProductCategory pc = new ProductCategory();
+        //Employee em = new Employee();
+        //cf.Customers.Add(c);
+        //cf.Products.Add(p);
+        //cf.ProductCats.Add(pc); 
+        //cf.Employess.Add(em);
+        //string json = JsonSerializer.Serialize(cf);
+        //File.WriteAllText(FILE_NAME, json);
     }
-    #region UI
+
+
+
+
+
     private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
-        LoadData();
-        DisplayCoffeeShopState();
+        LoadData(true);
+        
+
     }
     private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
         SaveData();
-        MessageBox.Show("Saved");
+        MessageBox.Show("File Written");
     }
     private void listToolStripMenuItem_Click(object sender, EventArgs e) {
         LoadData();
@@ -38,32 +61,72 @@ public partial class CoffeeShopForm : Form {
     }
     #endregion
 
-    #region Methods
-    private void DisplayCoffeeShopState() {
-        MessageBox.Show(this, $"Managers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Magager)}, " +
-            $"Cashiers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Cashier)}, " +
-            $"Baristas: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Barista)}, " +
-            $"Waiters: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Waiter)}, " +
-            $"Customers: {_coffeeshop.Customers.Count}");
+
+    private void listToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        LoadData(false);
+        CustomerForm customerForm = new CustomerForm();
+        customerForm.CoffeeShop = _coffeeshop;
+        customerForm.ShowDialog();
     }
-    public void LoadData() {
-        if (!File.Exists(FILE_NAME)) {
-            using (File.Create(FILE_NAME)) ;
+
+    private void dayCustomerCountToolStripMenuItem_Click(object sender, EventArgs e) {
+        MessageBox.Show($"Today's Customers: {_coffeeshop.CustomersToday}");
+    }
+
+    private void newDayToolStripMenuItem_Click(object sender, EventArgs e) {
+        _coffeeshop.CustomersToday = 0;
+        if(_coffeeshop.Customers.Count == 1) {
+            _coffeeshop.Customers.Remove(_coffeeshop.Customers.Last());
         }
-        string json = File.ReadAllText(FILE_NAME);
+
+        SaveData();
+        MessageBox.Show("New day.!!");
+    }
+
+
+    private void CoffeeShopInitialize() {
+        CoffeeShop cf = new CoffeeShop();
+        _coffeeshop = cf;
+    }
+
+
+    public void LoadData(bool m ) {
 
         try {
-            _coffeeshop = JsonSerializer.Deserialize<CoffeeShop>(json);
-            saveToolStripMenuItem.Enabled = true;
+           string json = File.ReadAllText(FILE_NAME);
+           _coffeeshop = JsonSerializer.Deserialize<CoffeeShop>(json);
+            if (m == true) {
+                MessageBox.Show("Load Succefull");
+            }
+                
+            
         }
         catch (Exception) {
-            _coffeeshop = new CoffeeShop();
-            SaveData();
+            MessageBox.Show("File Not Found, New File Created");
+            CoffeeShopInitialize();
+            //throw;
         }
+
+        saveToolStripMenuItem.Enabled = true;
+        coffeeShopStatusToolStripMenuItem.Enabled = true;
+        newDayToolStripMenuItem.Enabled = true;
+        todaysCustomerToolStripMenuItem.Enabled = true;
+
     }
+
     public void SaveData() {
         string json = JsonSerializer.Serialize(_coffeeshop);
         File.WriteAllText(FILE_NAME, json);
     }
-    #endregion
+
+
+    private void coffeeShopStatusToolStripMenuItem_Click(object sender, EventArgs e) {
+        MessageBox.Show(this, $"Managers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Magager)}, " +
+            $"Cashiers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Cashier)}, " +
+            $"Baristas: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Barista)}, " +
+            $"Waiters: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Waiter)}, " +
+            $"Active Customer: {_coffeeshop.Customers.Count} " +
+            $"Customers today: {_coffeeshop.CustomersToday}");
+    }
 }
