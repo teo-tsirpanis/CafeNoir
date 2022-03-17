@@ -42,20 +42,20 @@ public partial class CoffeeShopForm : Form
 
 
     private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
-        LoadData();
+        LoadData(true);
         
 
     }
 
     private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
         SaveData();
-        MessageBox.Show("Saved");
+        MessageBox.Show("File Written");
     }
 
 
     private void listToolStripMenuItem_Click(object sender, EventArgs e) {
 
-        LoadData();
+        LoadData(false);
         CustomerForm customerForm = new CustomerForm();
         customerForm.CoffeeShop = _coffeeshop;
         customerForm.ShowDialog();
@@ -82,12 +82,16 @@ public partial class CoffeeShopForm : Form
     }
 
 
-    public void LoadData() {
+    public void LoadData(bool m ) {
 
         try {
            string json = File.ReadAllText(FILE_NAME);
            _coffeeshop = JsonSerializer.Deserialize<CoffeeShop>(json);
-            MessageBox.Show("Load Successfully");
+            if (m == true) {
+                MessageBox.Show("Load Succefull");
+            }
+                
+            
         }
         catch (Exception) {
             MessageBox.Show("File Not Found, New File Created");
