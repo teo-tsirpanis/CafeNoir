@@ -4,12 +4,6 @@ using System.IO;
 using System.Text.Json;
 
 namespace CafeNoir;
-
-//CoffeeShop.ProductCats.Add(new ProductCategory() {
-//    Code = "000001",
-//            Description = "Espresso",
-//            ProductType = ProductType.Coffee
-//        });
 public partial class ProductCategoryForm : Form {
     private string _formName = "Product Categories";
 
