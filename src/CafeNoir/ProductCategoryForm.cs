@@ -63,8 +63,10 @@ public partial class ProductCategoryForm : Form {
         gridControlProductCategories.DataSource = bsProductCategory;
     }
     private bool DeletionIsConfirmed() {
+        if (CoffeeShop.ProductCats.Count < 1)
+            return false;
         var result = MessageBox.Show(this, "Are you sure you want to delete the selected Category?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        return result == DialogResult.Yes;
+        return (result == DialogResult.Yes) ;
     }
     private void DeleteCategory() {
         var student = bsProductCategory.Current as ProductCategory;
