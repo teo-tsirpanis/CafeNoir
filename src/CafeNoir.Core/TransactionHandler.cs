@@ -54,4 +54,13 @@ public class TransactionHandler {
     private void SetDisplayPrice(TransactionLine line) {
         line.DisplayPrice = line.TotalPrice - line.Discount;
     }
+
+    public string FinalizeTransaction(Transaction transaction) {
+        if (transaction.TransactionLines.Count == 0) 
+            return "No items added!";
+        if (transaction.TotalPrice > 50 && transaction.PaymentMethod == PaymentMethod.CreditCard)
+            return "Cannot pay with credit card if price is more than 50 Euros";
+
+        return string.Empty;
+    }
 }

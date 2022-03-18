@@ -25,12 +25,13 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lookUpPaymentMethod = new DevExpress.XtraEditors.LookUpEdit();
             this.labelTotalPrice = new DevExpress.XtraEditors.LabelControl();
             this.btnRemove = new DevExpress.XtraEditors.SimpleButton();
             this.gridTransactionLines = new DevExpress.XtraGrid.GridControl();
             this.grvTransactionLines = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colDisplayPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDisplayPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.spinEditQuantity = new DevExpress.XtraEditors.SpinEdit();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -58,11 +59,14 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.ctrlPaymentMethod = new DevExpress.XtraLayout.LayoutControlItem();
             this.bsProducts = new System.Windows.Forms.BindingSource(this.components);
             this.bsTransactionLines = new System.Windows.Forms.BindingSource(this.components);
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.bsTransactions = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpPaymentMethod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridTransactionLines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTransactionLines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditQuantity.Properties)).BeginInit();
@@ -84,13 +88,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlPaymentMethod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransactions)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.lookUpPaymentMethod);
             this.layoutControl1.Controls.Add(this.labelTotalPrice);
             this.layoutControl1.Controls.Add(this.btnRemove);
             this.layoutControl1.Controls.Add(this.gridTransactionLines);
@@ -107,6 +114,17 @@
             this.layoutControl1.Size = new System.Drawing.Size(800, 450);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lookUpPaymentMethod
+            // 
+            this.lookUpPaymentMethod.Location = new System.Drawing.Point(105, 416);
+            this.lookUpPaymentMethod.Name = "lookUpPaymentMethod";
+            this.lookUpPaymentMethod.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpPaymentMethod.Properties.NullText = "";
+            this.lookUpPaymentMethod.Size = new System.Drawing.Size(122, 20);
+            this.lookUpPaymentMethod.StyleController = this.layoutControl1;
+            this.lookUpPaymentMethod.TabIndex = 9;
             // 
             // labelTotalPrice
             // 
@@ -146,14 +164,6 @@
             this.grvTransactionLines.GridControl = this.gridTransactionLines;
             this.grvTransactionLines.Name = "grvTransactionLines";
             // 
-            // colDisplayPrice
-            // 
-            this.colDisplayPrice.Caption = "Price";
-            this.colDisplayPrice.FieldName = "DisplayPrice";
-            this.colDisplayPrice.Name = "colDisplayPrice";
-            this.colDisplayPrice.Visible = true;
-            this.colDisplayPrice.VisibleIndex = 0;
-            // 
             // colQuantity
             // 
             this.colQuantity.Caption = "Quantity";
@@ -161,6 +171,14 @@
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.Visible = true;
             this.colQuantity.VisibleIndex = 1;
+            // 
+            // colDisplayPrice
+            // 
+            this.colDisplayPrice.Caption = "Price";
+            this.colDisplayPrice.FieldName = "DisplayPrice";
+            this.colDisplayPrice.Name = "colDisplayPrice";
+            this.colDisplayPrice.Visible = true;
+            this.colDisplayPrice.VisibleIndex = 0;
             // 
             // colDiscount
             // 
@@ -177,7 +195,7 @@
             0,
             0,
             0});
-            this.spinEditQuantity.Location = new System.Drawing.Point(346, 29);
+            this.spinEditQuantity.Location = new System.Drawing.Point(385, 29);
             this.spinEditQuantity.Name = "spinEditQuantity";
             this.spinEditQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -194,7 +212,7 @@
             0,
             0});
             this.spinEditQuantity.Properties.NullText = "1";
-            this.spinEditQuantity.Size = new System.Drawing.Size(101, 20);
+            this.spinEditQuantity.Size = new System.Drawing.Size(62, 20);
             this.spinEditQuantity.StyleController = this.layoutControl1;
             this.spinEditQuantity.TabIndex = 2;
             // 
@@ -299,7 +317,8 @@
             this.emptySpaceItem4,
             this.layoutControlItem9,
             this.emptySpaceItem5,
-            this.emptySpaceItem7});
+            this.emptySpaceItem7,
+            this.ctrlPaymentMethod});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(800, 450);
             this.Root.TextVisible = false;
@@ -343,9 +362,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 404);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(219, 404);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(439, 26);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(220, 26);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
@@ -364,7 +383,7 @@
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(159, 26);
             this.layoutControlItem6.Text = "Quantity";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(42, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(81, 13);
             // 
             // emptySpaceItem3
             // 
@@ -433,6 +452,15 @@
             this.emptySpaceItem7.Size = new System.Drawing.Size(10, 17);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // ctrlPaymentMethod
+            // 
+            this.ctrlPaymentMethod.Control = this.lookUpPaymentMethod;
+            this.ctrlPaymentMethod.Location = new System.Drawing.Point(0, 404);
+            this.ctrlPaymentMethod.Name = "ctrlPaymentMethod";
+            this.ctrlPaymentMethod.Size = new System.Drawing.Size(219, 26);
+            this.ctrlPaymentMethod.Text = "Payment Method";
+            this.ctrlPaymentMethod.TextSize = new System.Drawing.Size(81, 13);
+            // 
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
@@ -453,6 +481,7 @@
             this.Load += new System.EventHandler(this.TransactionDetailsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpPaymentMethod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridTransactionLines)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTransactionLines)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditQuantity.Properties)).EndInit();
@@ -474,9 +503,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlPaymentMethod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLines)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransactions)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -520,5 +551,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDisplayPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colDiscount;
+        private DevExpress.XtraEditors.LookUpEdit lookUpPaymentMethod;
+        private DevExpress.XtraLayout.LayoutControlItem ctrlPaymentMethod;
+        private BindingSource bsTransactions;
     }
 }

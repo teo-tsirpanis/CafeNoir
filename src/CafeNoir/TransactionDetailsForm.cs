@@ -20,6 +20,7 @@ namespace CafeNoir {
         private void TransactionDetailsForm_Load(object sender, EventArgs e) {
             UpdateLabelTotalPrice();
             labelCustomer.Text = "Customer: " + CoffeeShop.Customers[0].Code;
+            ControlExtensions.PopulatePaymentMethod(lookUpPaymentMethod.Properties);
             SetUpBindings();
         }
         #region UI
@@ -34,10 +35,12 @@ namespace CafeNoir {
             this.Close();
         }
         private void btnSave_Click(object sender, EventArgs e) {
-            if (NewTransaction.TransactionLines.Count == 0) {
-                MessageBox.Show("No items added!");
+            string errorMessage = THandler.FinalizeTransaction(NewTransaction);
+            if (errorMessage != string.Empty) {
+                MessageBox.Show(errorMessage);
                 return;
             }
+            
             CoffeeShop.Transactions.Add(NewTransaction);
             CoffeeShop.SaveChanges();
             this.Close();
@@ -61,6 +64,9 @@ namespace CafeNoir {
 
             bsTransactionLines.DataSource = NewTransaction.TransactionLines;
             gridTransactionLines.DataSource = bsTransactionLines;
+
+            bsTransactions.DataSource = NewTransaction;
+            lookUpPaymentMethod.DataBindings.Add(new Binding("EditValue", bsTransactions, "PaymentMethod", true));
         }
         private void AddNewLine(Product selectedProduct) {
             var newTransactionLine = new TransactionLine() {
