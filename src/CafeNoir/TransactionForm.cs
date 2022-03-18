@@ -50,7 +50,7 @@ namespace CafeNoir {
             CoffeeShop.Products.Add(new Product() {
                 Code = "000001",
                 Cost = 5,
-                Price = 15,
+                Price = 4,
                 Description = " Glikos Freddo",
                 ProductCategoryID = new Guid()
 

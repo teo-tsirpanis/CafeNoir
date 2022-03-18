@@ -11,8 +11,6 @@ using CafeNoir.Core;
 
 namespace CafeNoir {
     public partial class TransactionDetailsForm : Form {
-        private decimal _discountedPrice;
-        private decimal _discountPerCent = 0.15m;
         public CoffeeShop CoffeeShop { get; }
         public Transaction NewTransaction { get; set; }
         public Employee Employee { get; }
@@ -51,16 +49,7 @@ namespace CafeNoir {
                 TotalPrice = Convert.ToInt32(spinEditQuantity.Text) * selectedProduct.Price
             };
 
-            THandler.AddTransLine(NewTransaction, newTransactionLine);
-
-            if (NewTransaction.TotalPrice  > 10) {
-                THandler.UpdateDiscounts(_discountPerCent);
-            }
-            else {
-                _discountedPrice = newTransactionLine.Price;
-            }
-
-            
+            THandler.AddTransLine(NewTransaction, newTransactionLine);         
             THandler.CalcTotalCosts(newTransactionLine, selectedProduct.Cost);
 
             THandler.UpdateTotalCost(NewTransaction);
@@ -95,7 +84,7 @@ namespace CafeNoir {
             this.Close();
         }
         private void UpdateLabelTotalPrice() {
-            labelTotalPrice.Text = "Total: " + _discountedPrice.ToString();
+            labelTotalPrice.Text = "Total: " + NewTransaction.TotalPrice.ToString();
         }
     }
 }

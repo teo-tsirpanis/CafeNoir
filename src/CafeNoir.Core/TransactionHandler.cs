@@ -2,7 +2,7 @@
 namespace CafeNoir.Core;
 public class TransactionHandler {
     private decimal discountPerCent = 0.15m;
-
+    private decimal discountThreshold = 10m;
     public TransactionHandler() {
 
     }
@@ -27,9 +27,31 @@ public class TransactionHandler {
         transaction.TotalCost = transaction.TransactionLines.Sum(x => x.TotalCost);
     }
     public void UpdateTotalPrice(Transaction transaction) {
-        transaction.TotalPrice = transaction.TransactionLines.Sum(x => x.TotalPrice);
-        if (transaction.TotalPrice > 10m) {
-            transaction.TotalPrice *= (1.0m - discountPerCent);
+        if (transaction.TransactionLines.Sum(x => x.TotalPrice) > discountThreshold) {
+            AddDiscountToLines(transaction);
         }
+        else {
+            RemoveDiscountFromLines(transaction);
+        }
+        transaction.TotalPrice = transaction.TransactionLines.Sum(x => x.TotalPrice - x.Discount);
+    }
+    public void AddDiscountToLines(Transaction transaction){
+        foreach (var line in transaction.TransactionLines) {
+            if(line.Discount == 0) {
+                line.Discount = line.TotalPrice * discountPerCent;
+                SetDisplayPrice(line);
+            }
+        }    
+    }
+    public void RemoveDiscountFromLines(Transaction transaction) {
+        foreach (var line in transaction.TransactionLines) {
+            if (line.Discount != 0) {
+                line.Discount = 0;
+                SetDisplayPrice(line);
+            }
+        }
+    }
+    private void SetDisplayPrice(TransactionLine line) {
+        line.DisplayPrice = line.TotalPrice - line.Discount;
     }
 }
