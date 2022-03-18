@@ -40,6 +40,8 @@ namespace CafeNoir.Core
 
         private Dto _dto;
 
+        private CoffeeShopLimits _limits;
+
         public List<Customer> Customers => _dto.Customers;
         public List<Product> Products => _dto.Products;
         public List<ProductCategory> ProductCats => _dto.ProductCats;
@@ -69,8 +71,25 @@ namespace CafeNoir.Core
             return retailCustomerMaybe;
         }
 
-        public CoffeeShop(string? dataPath, out bool createdNew)
+        private void PopulateEmployees(EmployeeType type, uint minCount, uint maxCount)
         {
+            if (maxCount > 0 && minCount > maxCount)
+                throw new ArgumentException($"{type}s cannot be both more than {minCount} and less than {maxCount}.");
+
+            if (minCount == 0)
+                return;
+
+            var employeesOfThisType = (uint)Employess.Count(x => x.EmployeeType == type);
+
+            for (uint i = employeesOfThisType; i <= minCount; i++)
+            {
+                Employess.Add(new(type) { Name = type.ToString(), Surname = $"#{i}" });
+            }
+        }
+
+        public CoffeeShop(string? dataPath, CoffeeShopLimits? limits, out bool createdNew)
+        {
+            _limits ??= CoffeeShopLimits.Default;
             createdNew = true;
 
             _dataPath = dataPath;
@@ -84,6 +103,10 @@ namespace CafeNoir.Core
             _dto = dto ?? new();
 
             RetailCustomer = GetOrCreateRetailCustomer();
+            PopulateEmployees(EmployeeType.Manager, _limits.MinManagers, _limits.MaxManagers);
+            PopulateEmployees(EmployeeType.Cashier, _limits.MinCashiers, _limits.MaxCashiers);
+            PopulateEmployees(EmployeeType.Barista, _limits.MinBaristas, _limits.MaxBaristas);
+            PopulateEmployees(EmployeeType.Waiter, _limits.MinWaiters, _limits.MaxWaiters);
         }
 
         public void SaveChanges()

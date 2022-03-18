@@ -15,7 +15,7 @@ public partial class CoffeeShopForm : Form
 
     private void CoffeeShopForm_Load(object sender, EventArgs e)
     {
-        _coffeeshop = new CoffeeShop(FILE_NAME, out bool createdNew);
+        _coffeeshop = new CoffeeShop(FILE_NAME, null, out bool createdNew);
 
         if (createdNew)
         {
@@ -61,7 +61,7 @@ public partial class CoffeeShopForm : Form
 
     private void coffeeShopStatusToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        MessageBox.Show(this, $"Managers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Magager)}, " +
+        MessageBox.Show(this, $"Managers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Manager)}, " +
             $"Cashiers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Cashier)}, " +
             $"Baristas: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Barista)}, " +
             $"Waiters: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Waiter)}, " +
