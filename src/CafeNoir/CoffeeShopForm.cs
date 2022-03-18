@@ -20,7 +20,7 @@ public partial class CoffeeShopForm : Form
         if (createdNew)
         {
             string fullPath = Path.GetFullPath(FILE_NAME);
-            MessageBox.Show(this, $"No data file found, created one at '{fullPath}'.", "New data file created.");
+            MessageBox.Show(this, $"No data file found, created one at '{fullPath}'.", "New data file created.", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 
@@ -32,7 +32,6 @@ public partial class CoffeeShopForm : Form
     private void saveToolStripMenuItem_Click(object sender, EventArgs e)
     {
         _coffeeshop.SaveChanges();
-        MessageBox.Show("File Written");
     }
 
     private void listToolStripMenuItem_Click(object sender, EventArgs e)

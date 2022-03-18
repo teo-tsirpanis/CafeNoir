@@ -1,4 +1,4 @@
-﻿
+
 using CafeNoir.Core;
 using System.IO;
 using System.Text.Json;
@@ -65,7 +65,7 @@ public partial class ProductCategoryForm : Form {
     private bool DeletionIsConfirmed() {
         if (CoffeeShop.ProductCats.Count < 1)
             return false;
-        var result = MessageBox.Show(this, "Are you sure you want to delete the selected Category?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        var result = MessageBox.Show(this, "Are you sure you want to delete the selected Category?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
         return (result == DialogResult.Yes) ;
     }
     private void DeleteCategory() {
