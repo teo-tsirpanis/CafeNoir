@@ -1,26 +1,26 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace CafeNoir.Core
 {
-    [JsonSerializable(typeof(CoffeeShop.CoffeeShopDto))]
+    [JsonSerializable(typeof(CoffeeShop.Dto))]
     internal partial class CoffeShopDtoSerializationContext : JsonSerializerContext { }
 
     public sealed class CoffeeShop
     {
-        internal sealed class CoffeeShopDto
+        internal sealed class Dto
         {
             public List<Customer> Customers { get; set; } = new();
             public List<Product> Products { get; set; } = new();
             public List<ProductCategory> ProductCats { get; set; } = new();
             public List<Employee> Employess { get; set; } = new();
 
-            public static CoffeeShopDto? TryReadFromFile(string path)
+            public static Dto? TryReadFromFile(string path)
             {
                 try
                 {
                     using FileStream file = File.OpenRead(path);
-                    return JsonSerializer.Deserialize(file, CoffeShopDtoSerializationContext.Default.CoffeeShopDto);
+                    return JsonSerializer.Deserialize(file, CoffeShopDtoSerializationContext.Default.Dto);
                 }
                 catch (FileNotFoundException)
                 {
@@ -31,13 +31,13 @@ namespace CafeNoir.Core
             public void WriteToFile(string path)
             {
                 using FileStream file = File.Create(path);
-                JsonSerializer.Serialize(file, this, CoffeShopDtoSerializationContext.Default.CoffeeShopDto);
+                JsonSerializer.Serialize(file, this, CoffeShopDtoSerializationContext.Default.Dto);
             }
         }
 
         private readonly string? _dataPath;
 
-        private CoffeeShopDto _dto;
+        private Dto _dto;
 
         public List<Customer> Customers => _dto.Customers;
         public List<Product> Products => _dto.Products;
@@ -88,6 +88,16 @@ namespace CafeNoir.Core
             {
                 _dto.WriteToFile(dataPath);
             }
+        }
+
+        public void ReloadChanges()
+        {
+            if (_dataPath is not string dataPath)
+                return;
+
+            Dto? dto = Dto.TryReadFromFile(dataPath);
+            if (dto != null)
+                _dto = dto;
         }
     }
 }
