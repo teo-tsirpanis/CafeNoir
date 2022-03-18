@@ -40,7 +40,7 @@ namespace CafeNoir {
                 MessageBox.Show(errorMessage);
                 return;
             }
-            
+
             CoffeeShop.Transactions.Add(NewTransaction);
             CoffeeShop.SaveChanges();
             this.Close();
