@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CafeNoir.Core;
+﻿using CafeNoir.Core;
 
 namespace CafeNoir {
     public partial class TransactionDetailsForm : Form {
@@ -24,40 +15,24 @@ namespace CafeNoir {
                 EmployeeID = employee.ID,
                 Date = DateTime.Now
             };
-            labelCustomer.Text = CoffeeShop.Customers[0].Code;
+
         }
         private void TransactionDetailsForm_Load(object sender, EventArgs e) {
             UpdateLabelTotalPrice();
+            labelCustomer.Text = "Customer: " + CoffeeShop.Customers[0].Code;
             SetUpBindings();
         }
-
-        private void SetUpBindings() {
-            bsProducts.DataSource = CoffeeShop.Products;
-            gridProducts.DataSource = bsProducts;
-
-            bsTransactionLines.DataSource = NewTransaction.TransactionLines;
-            gridTransactionLines.DataSource = bsTransactionLines;
-        }
-
+        #region UI
         private void btnAdd_Click(object sender, EventArgs e) {
             var selectedProduct = bsProducts.Current as Product;
-            var newTransactionLine = new TransactionLine() {
-                ProductID = selectedProduct.ID,
-                TransactionID = NewTransaction.ID,
-                Quantity = Convert.ToInt32(spinEditQuantity.Text),
-                Price = selectedProduct.Price,
-                TotalPrice = Convert.ToInt32(spinEditQuantity.Text) * selectedProduct.Price
-            };
+            if (selectedProduct != null) {
+                AddNewLine(selectedProduct);
+            }
 
-            THandler.AddTransLine(NewTransaction, newTransactionLine);         
-            THandler.CalcTotalCosts(newTransactionLine, selectedProduct.Cost);
-
-            THandler.UpdateTotalCost(NewTransaction);
-            THandler.UpdateTotalPrice(NewTransaction);
-            UpdateLabelTotalPrice();
-            grvTransactionLines.RefreshData();
         }
-
+        private void btnCancel_Click(object sender, EventArgs e) {
+            this.Close();
+        }
         private void btnSave_Click(object sender, EventArgs e) {
             if (NewTransaction.TransactionLines.Count == 0) {
                 MessageBox.Show("No items added!");
@@ -67,24 +42,50 @@ namespace CafeNoir {
             CoffeeShop.SaveChanges();
             this.Close();
         }
-
         private void btnRemove_Click(object sender, EventArgs e) {
             var selectedLine = bsTransactionLines.Current as TransactionLine;
             if (selectedLine != null) {
-                
+
                 NewTransaction.TransactionLines.Remove(selectedLine);
-                THandler.UpdateTotalCost(NewTransaction);
-                THandler.UpdateTotalPrice(NewTransaction);
+                UpdateTransaction();
                 UpdateLabelTotalPrice();
                 grvTransactionLines.RefreshData();
             }
         }
+        #endregion
 
-        private void btnCancel_Click(object sender, EventArgs e) {
-            this.Close();
+        #region Methods
+        private void SetUpBindings() {
+            bsProducts.DataSource = CoffeeShop.Products;
+            gridProducts.DataSource = bsProducts;
+
+            bsTransactionLines.DataSource = NewTransaction.TransactionLines;
+            gridTransactionLines.DataSource = bsTransactionLines;
+        }
+        private void AddNewLine(Product selectedProduct) {
+            var newTransactionLine = new TransactionLine() {
+                ProductID = selectedProduct.ID,
+                TransactionID = NewTransaction.ID,
+                Quantity = Convert.ToInt32(spinEditQuantity.Text),
+                Price = selectedProduct.Price,
+                TotalPrice = Convert.ToInt32(spinEditQuantity.Text) * selectedProduct.Price
+            };
+
+            THandler.AddTransLine(NewTransaction, newTransactionLine);
+            THandler.CalcTotalCosts(newTransactionLine, selectedProduct.Cost);
+
+            UpdateTransaction();
+            UpdateLabelTotalPrice();
+            grvTransactionLines.RefreshData();
         }
         private void UpdateLabelTotalPrice() {
             labelTotalPrice.Text = "Total: " + NewTransaction.TotalPrice.ToString();
         }
+        private void UpdateTransaction() {
+            THandler.UpdateTotalCost(NewTransaction);
+            THandler.UpdateTotalPrice(NewTransaction);
+        }
+        #endregion
+
     }
 }
