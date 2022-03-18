@@ -6,7 +6,7 @@ public enum ProductType {
     Food
 }
 public enum EmployeeType {
-    Magager,
+    Manager,
     Cashier,
     Barista,
     Waiter
