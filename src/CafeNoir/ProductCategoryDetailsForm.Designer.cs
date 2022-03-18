@@ -40,7 +40,6 @@
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlType = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.bsCoffeeShop = new System.Windows.Forms.BindingSource(this.components);
             this.bsProductCategory = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -57,7 +56,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCoffeeShop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProductCategory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -242,7 +240,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCoffeeShop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProductCategory)).EndInit();
             this.ResumeLayout(false);
 
@@ -266,7 +263,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlType;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
-        private BindingSource bsCoffeeShop;
         private BindingSource bsProductCategory;
     }
 }
