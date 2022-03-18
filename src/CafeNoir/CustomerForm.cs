@@ -18,7 +18,7 @@ namespace CafeNoir
             bsCoffeeShop.DataSource = CoffeeShop;
 
             bsCustomers.DataSource = bsCoffeeShop;
-            bsCustomers.DataMember = "Customers";
+            bsCustomers.DataMember = nameof(CoffeeShop.Customers);
             gridControlCustomers.DataSource = bsCustomers;
         }
 

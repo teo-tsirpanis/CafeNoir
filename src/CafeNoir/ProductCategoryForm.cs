@@ -63,7 +63,7 @@ public partial class ProductCategoryForm : Form
         bsCoffeeShop.DataSource = CoffeeShop;
 
         bsProductCategory.DataSource = bsCoffeeShop;
-        bsProductCategory.DataMember = "ProductCats";
+        bsProductCategory.DataMember = nameof(CoffeeShop.ProductCats);
 
         gridControlProductCategories.DataSource = bsProductCategory;
     }
