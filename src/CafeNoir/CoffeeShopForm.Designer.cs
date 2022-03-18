@@ -37,6 +37,8 @@ partial class CoffeeShopForm
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productCategoryListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,10 +47,11 @@ partial class CoffeeShopForm
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.customersToolStripMenuItem,
-            this.productCategoriesToolStripMenuItem});
+            this.productCategoriesToolStripMenuItem,
+            this.transactionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(900, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,21 +68,21 @@ partial class CoffeeShopForm
             // reloadToolStripMenuItem
             // 
             this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
-            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.reloadToolStripMenuItem.Text = "Reload";
             this.reloadToolStripMenuItem.Click += new System.EventHandler(this.reloadToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // coffeeShopStatusToolStripMenuItem
             // 
             this.coffeeShopStatusToolStripMenuItem.Name = "coffeeShopStatusToolStripMenuItem";
-            this.coffeeShopStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.coffeeShopStatusToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.coffeeShopStatusToolStripMenuItem.Text = "CoffeeShop Status";
             this.coffeeShopStatusToolStripMenuItem.Click += new System.EventHandler(this.coffeeShopStatusToolStripMenuItem_Click);
             // 
@@ -113,6 +116,21 @@ partial class CoffeeShopForm
             this.productCategoryListToolStripMenuItem.Text = "List";
             this.productCategoryListToolStripMenuItem.Click += new System.EventHandler(this.productCategoryListToolStripMenuItem_Click);
             // 
+            // transactionsToolStripMenuItem
+            // 
+            this.transactionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listToolStripMenuItem1});
+            this.transactionsToolStripMenuItem.Name = "transactionsToolStripMenuItem";
+            this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.transactionsToolStripMenuItem.Text = "Transactions";
+            // 
+            // listToolStripMenuItem1
+            // 
+            this.listToolStripMenuItem1.Name = "listToolStripMenuItem1";
+            this.listToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.listToolStripMenuItem1.Text = "List";
+            this.listToolStripMenuItem1.Click += new System.EventHandler(this.listToolStripMenuItem1_Click);
+            // 
             // CoffeeShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -143,5 +161,6 @@ partial class CoffeeShopForm
     private ToolStripMenuItem productCategoriesToolStripMenuItem;
     private ToolStripMenuItem productCategoryListToolStripMenuItem;
     private ToolStripMenuItem coffeeShopStatusToolStripMenuItem;
-
+    private ToolStripMenuItem transactionsToolStripMenuItem;
+    private ToolStripMenuItem listToolStripMenuItem1;
 }

@@ -46,6 +46,19 @@ public partial class CoffeeShopForm : Form
         productCategoryForm.ShowDialog();
     }
 
+    private void listToolStripMenuItem1_Click(object sender, EventArgs e) {
+
+        var trans = new Transaction() {
+            ID = new Guid(),
+            CustomerID = new Guid(),
+            EmployeeID = new Guid(),
+
+        };
+        _coffeeshop.Transactions.Add(trans);
+        var transactionForm = new TransactionForm(_coffeeshop);
+        transactionForm.ShowDialog();
+    }
+
     private void coffeeShopStatusToolStripMenuItem_Click(object sender, EventArgs e)
     {
         MessageBox.Show(this, $"Managers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Magager)}, " +
@@ -56,4 +69,5 @@ public partial class CoffeeShopForm : Form
             $"Products: {_coffeeshop.Products.Count} "+
             $"Customers: {_coffeeshop.Customers.Count}");
     }
+
 }

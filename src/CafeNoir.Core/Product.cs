@@ -16,6 +16,8 @@ namespace CafeNoir.Core
         public decimal Price { get; set; }
 
         public decimal Cost { get; set; }
+        public string Description { get; set; }
+        public Guid ProductCategoryID { get; set; }
 
         // TODO: Figure out how to implement the category reference.
 
