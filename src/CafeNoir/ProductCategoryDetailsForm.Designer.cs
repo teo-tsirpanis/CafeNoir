@@ -225,7 +225,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.layoutControl1);
             this.Name = "ProductCategoryDetailsForm";
-            this.Text = "ProductCategoryDetailsForm";
+            this.Text = "New Product Category";
             this.Load += new System.EventHandler(this.ProductCategoryDetailsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

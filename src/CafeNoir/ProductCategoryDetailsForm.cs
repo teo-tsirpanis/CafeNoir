@@ -1,85 +1,76 @@
-﻿
-using CafeNoir.Core;
-using DevExpress.XtraEditors.Controls;
-using System.IO;
-using System.Text.Json;
+﻿using CafeNoir.Core;
 
 namespace CafeNoir;
-public partial class ProductCategoryDetailsForm : Form {
-    private string FILE_NAME;
-    private string _formName = "New Product Category";
+public partial class ProductCategoryDetailsForm : Form
+{
+    private ProductCategory? _changedProductCategory;
+    private ProductCategory? _originalProductCategory;
+    private readonly CoffeeShop _coffeeShop;
 
-    private ProductCategory _changedProductCategory;
-    private ProductCategory _originalProductCategory;
-    private CoffeeShop _coffeeShop;
-
-    public ProductCategoryDetailsForm(CoffeeShop university, string file_name) {
-        InitializeComponent();
-        this.Text = _formName;
-        FILE_NAME = file_name;
-        _coffeeShop = university;
-        PopulateControls();
-    }
-
-    public ProductCategoryDetailsForm(CoffeeShop coffeeShop, string file_name, ProductCategory productCategory) : this(coffeeShop, file_name) {
+    public ProductCategoryDetailsForm(CoffeeShop coffeeShop, ProductCategory? productCategory = null)
+    {
+        _coffeeShop = coffeeShop;
         _changedProductCategory = productCategory;
-        _originalProductCategory = productCategory.ShallowCopy();
+        _originalProductCategory = productCategory?.ShallowCopy();
+        InitializeComponent();
+        ControlExtensions.PopulateProductType(ctrlType.Properties);
     }
 
-    private void ProductCategoryDetailsForm_Load(object sender, EventArgs e) {
-        if (_changedProductCategory == null) {
+    private void ProductCategoryDetailsForm_Load(object sender, EventArgs e)
+    {
+        if (_changedProductCategory == null)
+        {
             _changedProductCategory = new ProductCategory();
             _coffeeShop.ProductCats.Add(_changedProductCategory);
             bsProductCategory.DataSource = _changedProductCategory;
         }
-        else {
+        else
+        {
             bsProductCategory.DataSource = _changedProductCategory;
         }
 
         SetDataBindings();
     }
     #region UI
-    private void btnSave_Click(object sender, EventArgs e) {
-        SaveToFile();
+    private void btnSave_Click(object sender, EventArgs e)
+    {
+        _coffeeShop.SaveChanges();
         DialogResult = DialogResult.OK;
     }
-    private void btnCancel_Click(object sender, EventArgs e) {
+
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
         ReverseChanges();
         RemoveNewCategory();
-        this.Close();
+        Close();
     }
     #endregion
 
     #region Methods
-    private void SetDataBindings() {
+    private void SetDataBindings()
+    {
         ctrlCode.DataBindings.Add(new Binding("EditValue", bsProductCategory, "Code", true));
         ctrlDescription.DataBindings.Add(new Binding("EditValue", bsProductCategory, "Description", true));
         ctrlType.DataBindings.Add(new Binding("EditValue", bsProductCategory, "ProductType", true));
     }
-    private void SaveToFile() {
-        string json = JsonSerializer.Serialize(_coffeeShop);
-        File.WriteAllText(FILE_NAME, json);
-    }
-    private void RemoveNewCategory() {
-        if (_originalProductCategory == null) {
+
+    private void RemoveNewCategory()
+    {
+        if (_originalProductCategory == null)
+        {
             int len = _coffeeShop.ProductCats.Count();
             _coffeeShop.ProductCats.RemoveAt(len - 1);
         }
     }
-    private void ReverseChanges() {
-        if (_originalProductCategory != null) {
+
+    private void ReverseChanges()
+    {
+        if (_originalProductCategory != null && _changedProductCategory != null)
+        {
             _changedProductCategory.Code = _originalProductCategory.Code;
             _changedProductCategory.Description = _originalProductCategory.Description;
             _changedProductCategory.ProductType = _originalProductCategory.ProductType;
         }
     }
-    private void PopulateControls() {
-        var controlsHelper = new ControlsHelper();
-        controlsHelper.PopulateProductType(ctrlType.Properties);
-    }
     #endregion
-
-
-
-
 }
