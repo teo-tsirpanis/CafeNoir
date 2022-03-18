@@ -29,6 +29,9 @@
             this.btnRemove = new DevExpress.XtraEditors.SimpleButton();
             this.gridTransactionLines = new DevExpress.XtraGrid.GridControl();
             this.grvTransactionLines = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDisplayPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.spinEditQuantity = new DevExpress.XtraEditors.SpinEdit();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
@@ -136,8 +139,36 @@
             // 
             // grvTransactionLines
             // 
+            this.grvTransactionLines.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colQuantity,
+            this.colDisplayPrice,
+            this.colDiscount});
             this.grvTransactionLines.GridControl = this.gridTransactionLines;
             this.grvTransactionLines.Name = "grvTransactionLines";
+            // 
+            // colDisplayPrice
+            // 
+            this.colDisplayPrice.Caption = "Price";
+            this.colDisplayPrice.FieldName = "DisplayPrice";
+            this.colDisplayPrice.Name = "colDisplayPrice";
+            this.colDisplayPrice.Visible = true;
+            this.colDisplayPrice.VisibleIndex = 0;
+            // 
+            // colQuantity
+            // 
+            this.colQuantity.Caption = "Quantity";
+            this.colQuantity.FieldName = "Quantity";
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.Visible = true;
+            this.colQuantity.VisibleIndex = 1;
+            // 
+            // colDiscount
+            // 
+            this.colDiscount.Caption = "Discount";
+            this.colDiscount.FieldName = "Discount";
+            this.colDiscount.Name = "colDiscount";
+            this.colDiscount.Visible = true;
+            this.colDiscount.VisibleIndex = 2;
             // 
             // spinEditQuantity
             // 
@@ -486,5 +517,8 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
+        private DevExpress.XtraGrid.Columns.GridColumn colDisplayPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiscount;
     }
 }
