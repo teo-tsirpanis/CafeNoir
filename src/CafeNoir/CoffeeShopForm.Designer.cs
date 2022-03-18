@@ -1,4 +1,4 @@
-﻿namespace CafeNoir;
+namespace CafeNoir;
 
 partial class CoffeeShopForm
 {
@@ -117,10 +117,11 @@ partial class CoffeeShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 600);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CoffeeShopForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Coffee-Shop";
             this.Load += new System.EventHandler(this.CoffeeShopForm_Load);
             this.menuStrip1.ResumeLayout(false);
