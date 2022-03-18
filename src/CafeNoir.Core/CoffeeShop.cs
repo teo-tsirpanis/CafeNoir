@@ -13,7 +13,8 @@ namespace CafeNoir.Core
             public List<Customer> Customers { get; set; } = new();
             public List<Product> Products { get; set; } = new();
             public List<ProductCategory> ProductCats { get; set; } = new();
-            public List<Employee> Employess { get; set; } = new();
+            public List<Employee> Employees { get; set; } = new();
+            public List<Transaction> Transactions { get; set; } = new();
 
             public static Dto? TryReadFromFile(string path)
             {
@@ -42,7 +43,8 @@ namespace CafeNoir.Core
         public List<Customer> Customers => _dto.Customers;
         public List<Product> Products => _dto.Products;
         public List<ProductCategory> ProductCats => _dto.ProductCats;
-        public List<Employee> Employess => _dto.Employess;
+        public List<Employee> Employess => _dto.Employees;
+        public List<Transaction> Transactions => _dto.Transactions;
 
         public Customer RetailCustomer { get; }
 
