@@ -163,6 +163,7 @@
             this.colDiscount});
             this.grvTransactionLines.GridControl = this.gridTransactionLines;
             this.grvTransactionLines.Name = "grvTransactionLines";
+            this.grvTransactionLines.OptionsBehavior.Editable = false;
             // 
             // colQuantity
             // 
@@ -264,6 +265,7 @@
             this.colPrice});
             this.grvProducts.GridControl = this.gridProducts;
             this.grvProducts.Name = "grvProducts";
+            this.grvProducts.OptionsBehavior.Editable = false;
             // 
             // colCode
             // 
