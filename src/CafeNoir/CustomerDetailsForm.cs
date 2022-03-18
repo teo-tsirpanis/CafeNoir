@@ -1,45 +1,39 @@
 ﻿using CafeNoir.Core;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace CafeNoir {
-    public partial class CustomerDetailsForm : Form {
-
-
+namespace CafeNoir
+{
+    public partial class CustomerDetailsForm : Form
+    {
         private const string FILE_NAME = "coffeeshop.json";
-        public CoffeeShop CoffeeShop { get; set; }
-        public Customer Customer { get; set; }
+        public CoffeeShop CoffeeShop { get; }
+        public Customer Customer { get; }
 
-        public CustomerDetailsForm() {
+        public CustomerDetailsForm(CoffeeShop coffeeShop, Customer? customer)
+        {
+            CoffeeShop = coffeeShop;
+
+            if (customer == null)
+            {
+                customer = new Customer($"{CoffeeShop.Customers.Count:03}");
+                CoffeeShop.Customers.Add(customer);
+            }
+
+            Customer = customer;
+
             InitializeComponent();
         }
 
-
-
-        private void CustomerDetailsForm_Load(object sender, EventArgs e) {
-
-            if (Customer == null) {
-                CoffeeShop.CustomersToday++;
-                Customer = new Customer($"00{CoffeeShop.CustomersToday}");
-                CoffeeShop.Customers.Add(Customer);
-            }
-
+        private void CustomerDetailsForm_Load(object sender, EventArgs e)
+        {
             bsCustomer.DataSource = Customer;
-            textEditCode.DataBindings.Add("EditValue", bsCustomer,"Code");
-            textEditDescription.DataBindings.Add("EditValue", bsCustomer,"Description");      
-
+            textEditCode.DataBindings.Add("EditValue", bsCustomer, "Code");
+            textEditDescription.DataBindings.Add("EditValue", bsCustomer, "Description");
         }
 
-        private void btnSave_Click(object sender, EventArgs e) {
+        private void btnSave_Click(object sender, EventArgs e)
+        {
             //CoffeeShop.Customers.Add(Customer);
             string json = JsonSerializer.Serialize(CoffeeShop);
             File.WriteAllText(FILE_NAME, json);
@@ -47,8 +41,9 @@ namespace CafeNoir {
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e) {
-            this.Close();
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
