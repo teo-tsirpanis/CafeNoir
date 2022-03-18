@@ -1,4 +1,4 @@
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace CafeNoir.Core
@@ -67,13 +67,16 @@ namespace CafeNoir.Core
             return retailCustomerMaybe;
         }
 
-        public CoffeeShop(string? dataPath)
+        public CoffeeShop(string? dataPath, out bool createdNew)
         {
+            createdNew = true;
+
             _dataPath = dataPath;
-            CoffeeShopDto? dto = null;
+            Dto? dto = null;
             if (dataPath != null)
             {
-                dto = CoffeeShopDto.TryReadFromFile(dataPath);
+                dto = Dto.TryReadFromFile(dataPath);
+                createdNew = dto == null;
             }
 
             _dto = dto ?? new();
