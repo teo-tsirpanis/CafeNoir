@@ -74,7 +74,8 @@ namespace CafeNoir {
                 TransactionID = NewTransaction.ID,
                 Quantity = Convert.ToInt32(spinEditQuantity.Text),
                 Price = selectedProduct.Price,
-                TotalPrice = Convert.ToInt32(spinEditQuantity.Text) * selectedProduct.Price
+                TotalPrice = Convert.ToInt32(spinEditQuantity.Text) * selectedProduct.Price,
+                DisplayPrice = Convert.ToInt32(spinEditQuantity.Text) * selectedProduct.Price
             };
 
             THandler.AddTransLine(NewTransaction, newTransactionLine);
