@@ -36,18 +36,13 @@ public partial class CoffeeShopForm : Form
 
     private void listToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        _coffeeshop.ReloadChanges();
-        CustomerForm customerForm = new CustomerForm(_coffeeshop);
+        var customerForm = new CustomerForm(_coffeeshop);
         customerForm.ShowDialog();
     }
 
     private void productCategoryListToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        _coffeeshop.ReloadChanges();
-        var productCategoryForm = new ProductCategoryForm(FILE_NAME)
-        {
-            CoffeeShop = _coffeeshop
-        };
+        var productCategoryForm = new ProductCategoryForm(_coffeeshop);
         productCategoryForm.Show();
     }
 

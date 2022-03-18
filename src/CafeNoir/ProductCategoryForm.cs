@@ -1,60 +1,65 @@
-
-using CafeNoir.Core;
-using System.IO;
-using System.Text.Json;
+﻿using CafeNoir.Core;
 
 namespace CafeNoir;
-public partial class ProductCategoryForm : Form {
+public partial class ProductCategoryForm : Form
+{
     private string _formName = "Product Categories";
 
-    public CoffeeShop CoffeeShop { get; set; }
-    private string FILE_NAME;
-    public ProductCategoryForm(string file_name) {
-        FILE_NAME = file_name;
+    public CoffeeShop CoffeeShop { get; }
+    public ProductCategoryForm(CoffeeShop coffeeShop)
+    {
+        CoffeeShop = coffeeShop;
         InitializeComponent();
     }
 
-    private void ProductCategoryForm_Load(object sender, EventArgs e) {
-        this.Text = _formName;
-        PopulateControls();
+    private void ProductCategoryForm_Load(object sender, EventArgs e)
+    {
+        Text = _formName;
+        ControlExtensions.PopulateProductType(repType);
         SetUpBindings();
     }
+
     #region UI
-    private void btnClose_Click(object sender, EventArgs e) {
-        CloseForm();
+    private void btnClose_Click(object sender, EventArgs e)
+    {
+        Close();
     }
-    private void btnNew_Click(object sender, EventArgs e) {
+
+    private void btnNew_Click(object sender, EventArgs e)
+    {
         OpenDetailsPage();
     }
-    private void btnEdit_Click(object sender, EventArgs e) {
-        OpenDetailsPage(bsProductCategory.Current as ProductCategory);
+
+    private void btnEdit_Click(object sender, EventArgs e)
+    {
+        if (bsProductCategory.Current is ProductCategory productCategory)
+            OpenDetailsPage(productCategory);
     }
-    private void btnDelete_Click(object sender, EventArgs e) {
+
+    private void btnDelete_Click(object sender, EventArgs e)
+    {
         if (DeletionIsConfirmed())
             DeleteCategory();
     }
     #endregion
 
     #region Methods
-
-    private void OpenDetailsPage() {
-        var coffeeShop = bsCoffeeShop.Current as CoffeeShop;
-        var productCategoryDetailsForm = new ProductCategoryDetailsForm(coffeeShop, FILE_NAME);
+    private void OpenDetailsPage()
+    {
+        var productCategoryDetailsForm = new ProductCategoryDetailsForm(CoffeeShop);
         productCategoryDetailsForm.ShowDialog();
         grdProductCategories.RefreshData();
     }
-    private void OpenDetailsPage(ProductCategory currentProductCategory) {
-        if (currentProductCategory != null) {
-            var coffeeShop = bsCoffeeShop.Current as CoffeeShop;
-            var productCategoryDetailsForm = new ProductCategoryDetailsForm(coffeeShop, FILE_NAME, currentProductCategory);
-            productCategoryDetailsForm.ShowDialog();
-            grdProductCategories.RefreshData();
-        }
+
+    private void OpenDetailsPage(ProductCategory currentProductCategory)
+    {
+        var productCategoryDetailsForm = new ProductCategoryDetailsForm(CoffeeShop, currentProductCategory);
+        productCategoryDetailsForm.ShowDialog();
+        grdProductCategories.RefreshData();
     }
-    private void CloseForm() {
-        this.Close();
-    }
-    private void SetUpBindings() {
+
+    private void SetUpBindings()
+    {
         bsCoffeeShop.DataSource = CoffeeShop;
 
         bsProductCategory.DataSource = bsCoffeeShop;
@@ -62,26 +67,20 @@ public partial class ProductCategoryForm : Form {
 
         gridControlProductCategories.DataSource = bsProductCategory;
     }
-    private bool DeletionIsConfirmed() {
+
+    private bool DeletionIsConfirmed()
+    {
         if (CoffeeShop.ProductCats.Count < 1)
             return false;
         var result = MessageBox.Show(this, "Are you sure you want to delete the selected Category?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-        return (result == DialogResult.Yes) ;
+        return result == DialogResult.Yes;
     }
-    private void DeleteCategory() {
+
+    private void DeleteCategory()
+    {
         var student = bsProductCategory.Current as ProductCategory;
         bsProductCategory.Remove(student);
-        SaveData();
-    }
-    private void SaveData() {
-        var coffeeShop = bsCoffeeShop.Current as CoffeeShop;
-        string json = JsonSerializer.Serialize(coffeeShop);
-        File.WriteAllText(FILE_NAME, json);
-    }
-    private void PopulateControls() {
-        var controlsHelper = new ControlsHelper();
-        controlsHelper.PopulateProductType(repType);
+        CoffeeShop.SaveChanges();
     }
     #endregion
-
 }
