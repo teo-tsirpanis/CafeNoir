@@ -21,6 +21,9 @@ public class Customer {
         Description = "Retail Customer";
     }
 
+    public Customer ShallowCopy() {
+        return (Customer)MemberwiseClone();
+    }
 
 
 }
