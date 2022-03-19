@@ -46,7 +46,7 @@ public partial class CoffeeShopForm : Form
         productCategoryForm.ShowDialog();
     }
 
-    private void listToolStripMenuItem1_Click(object sender, EventArgs e) {
+    private void transactionToolStripMenuItem_Click(object sender, EventArgs e) {
 
         var trans = new Transaction() {
             ID = new Guid(),
@@ -76,7 +76,7 @@ public partial class CoffeeShopForm : Form
         employeeForm.ShowDialog();
     }
 
-    private void listToolStripMenuItem1_Click(object sender, EventArgs e)
+    private void productToolStripMenuItem_Click(object sender, EventArgs e)
     {
         var productForm = new ProductForm(_coffeeshop);
         productForm.ShowDialog();

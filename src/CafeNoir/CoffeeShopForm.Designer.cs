@@ -52,7 +52,7 @@ partial class CoffeeShopForm
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.customersToolStripMenuItem,
-            this.productToolStripMenuItem
+            this.productToolStripMenuItem,
             this.productCategoriesToolStripMenuItem,
             this.transactionsToolStripMenuItem,
             this.employeesToolStripMenuItem});
@@ -145,7 +145,7 @@ partial class CoffeeShopForm
             this.productListToolStripMenuItem.Name = "productListToolStripMenuItem";
             this.productListToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.productListToolStripMenuItem.Text = "List";
-            this.productListToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem1_Click);
+            this.productListToolStripMenuItem.Click += new System.EventHandler(this.productToolStripMenuItem_Click);
 
             // 
             // employeesToolStripMenuItem

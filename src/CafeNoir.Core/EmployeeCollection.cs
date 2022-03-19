@@ -20,7 +20,7 @@ internal sealed class EmployeeCollection : Collection<Employee>
 
         for (uint i = employeesOfThisType; i < minCount; i++)
         {
-            Items.Add(new(type) { Name = type.ToString(), Surname = $"#{i}" });
+            Items.Add(new() { Name = type.ToString(), Surname = $"#{i}", EmployeeType = type });
         }
     }
 

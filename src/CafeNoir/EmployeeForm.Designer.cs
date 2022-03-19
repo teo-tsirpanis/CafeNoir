@@ -48,6 +48,10 @@
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.bsCoffeeShop = new System.Windows.Forms.BindingSource(this.components);
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSurname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmployeeType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSalaryPerMonth = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlEmployees)).BeginInit();
@@ -92,6 +96,7 @@
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnClose
             // 
@@ -151,6 +156,11 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colName,
+            this.colSurname,
+            this.colEmployeeType,
+            this.colSalaryPerMonth});
             this.gridView1.GridControl = this.gridControlEmployees;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -241,6 +251,34 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(255, 28);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // colName
+            // 
+            this.colName.Caption = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            // 
+            // colSurname
+            // 
+            this.colSurname.Caption = "Surname";
+            this.colSurname.Name = "colSurname";
+            this.colSurname.Visible = true;
+            this.colSurname.VisibleIndex = 1;
+            // 
+            // colEmployeeType
+            // 
+            this.colEmployeeType.Caption = "Employee Type";
+            this.colEmployeeType.Name = "colEmployeeType";
+            this.colEmployeeType.Visible = true;
+            this.colEmployeeType.VisibleIndex = 2;
+            // 
+            // colSalaryPerMonth
+            // 
+            this.colSalaryPerMonth.Caption = "Salary per Month";
+            this.colSalaryPerMonth.Name = "colSalaryPerMonth";
+            this.colSalaryPerMonth.Visible = true;
+            this.colSalaryPerMonth.VisibleIndex = 3;
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -291,5 +329,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colSurname;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmployeeType;
+        private DevExpress.XtraGrid.Columns.GridColumn colSalaryPerMonth;
     }
 }

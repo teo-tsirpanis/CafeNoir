@@ -1,4 +1,6 @@
-﻿namespace CafeNoir.Core
+﻿using System.Text.Json.Serialization;
+
+namespace CafeNoir.Core
 {
     public class Employee
     {
@@ -12,9 +14,8 @@
 
         public decimal SalaryPerMonth { get; set; }
 
-        public Employee(EmployeeType type)
+        public Employee()
         {
-            EmployeeType = type;
         }
 
         public Employee ShallowCopy() => (Employee)MemberwiseClone();
