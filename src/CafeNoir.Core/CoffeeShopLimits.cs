@@ -11,6 +11,17 @@ public sealed class CoffeeShopLimits
     public uint MinWaiters { get; init; } = 1;
     public uint MaxWaiters { get; init; } = 3;
 
+    public uint MinEmployees => MinManagers + MinCashiers + MinBaristas + MinWaiters;
+
+    public (uint Min, uint Max) GetLimitsForType(EmployeeType type) => type switch
+    {
+        EmployeeType.Manager => (MinManagers, MaxManagers),
+        EmployeeType.Cashier => (MinCashiers, MaxCashiers),
+        EmployeeType.Barista => (MinBaristas, MaxBaristas),
+        EmployeeType.Waiter => (MinWaiters, MaxWaiters),
+        _ => throw new ArgumentOutOfRangeException(nameof(type)),
+    };
+
     public static CoffeeShopLimits Default { get; } = new();
 
     public CoffeeShopLimits()
