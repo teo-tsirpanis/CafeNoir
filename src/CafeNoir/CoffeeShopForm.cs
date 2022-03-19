@@ -70,4 +70,11 @@ public partial class CoffeeShopForm : Form
             $"Customers: {_coffeeshop.Customers.Count}");
     }
 
+
+    private void listToolStripMenuItem1_Click(object sender, EventArgs e)
+    {
+        var productForm = new ProductForm(_coffeeshop);
+        productForm.ShowDialog();
+    }
+
 }
