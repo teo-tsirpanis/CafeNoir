@@ -60,10 +60,8 @@ public partial class ProductForm : Form
     private void SetUpBindings()
     {
         bsCoffeeShop.DataSource = CoffeeShop;
-
-        bsProduct.DataSource = bsCoffeeShop;
-        bsProduct.DataMember = nameof(CoffeeShop.Products);
-
+        bsProduct.DataSource = CoffeeShop.Products;
+        //bsProduct.DataMember = nameof(CoffeeShop.Products);
         gridControlProduct.DataSource = bsProduct;
     }
     private bool DeletionIsConfirmed()
@@ -76,8 +74,8 @@ public partial class ProductForm : Form
 
     private void DeleteCategory()
     {
-        var student = bsProduct.Current as ProductCategory;
-        bsProduct.Remove(student);
+        var prd = bsProduct.Current as Product;
+        bsProduct.Remove(prd);
         CoffeeShop.SaveChanges();
     }
 
