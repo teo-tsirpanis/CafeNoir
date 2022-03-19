@@ -19,6 +19,7 @@ public class Product
         return (Product)MemberwiseClone();
     }
 
+
     public Product(Guid productCategoryID)
     {
         ProductCategoryID = productCategoryID;
@@ -33,5 +34,23 @@ public class Product
     }
     public Product()
     {
+
+        public Guid ID { get; set; }
+
+        public string Code { get; set; }
+
+        public decimal Price { get; set; }
+
+        public decimal Cost { get; set; }
+        public string Description { get; set; }
+        public Guid ProductCategoryID { get; set; }
+
+        // TODO: Figure out how to implement the category reference.
+
+        public Product()
+        {
+            ID = Guid.NewGuid();
+        }
+
     }
 }

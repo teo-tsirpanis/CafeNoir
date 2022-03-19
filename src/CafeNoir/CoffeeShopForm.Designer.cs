@@ -37,8 +37,10 @@ partial class CoffeeShopForm
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productCategoryListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,11 +51,13 @@ partial class CoffeeShopForm
             this.fileToolStripMenuItem,
             this.customersToolStripMenuItem,
             this.productCategoriesToolStripMenuItem,
+
             this.productToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
             this.menuStrip1.Size = new System.Drawing.Size(1029, 30);
+
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -70,21 +74,27 @@ partial class CoffeeShopForm
             // reloadToolStripMenuItem
             // 
             this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
+
             this.reloadToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+
             this.reloadToolStripMenuItem.Text = "Reload";
             this.reloadToolStripMenuItem.Click += new System.EventHandler(this.reloadToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // coffeeShopStatusToolStripMenuItem
             // 
             this.coffeeShopStatusToolStripMenuItem.Name = "coffeeShopStatusToolStripMenuItem";
+
             this.coffeeShopStatusToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+
             this.coffeeShopStatusToolStripMenuItem.Text = "CoffeeShop Status";
             this.coffeeShopStatusToolStripMenuItem.Click += new System.EventHandler(this.coffeeShopStatusToolStripMenuItem_Click);
             // 
@@ -118,6 +128,7 @@ partial class CoffeeShopForm
             this.productCategoryListToolStripMenuItem.Text = "List";
             this.productCategoryListToolStripMenuItem.Click += new System.EventHandler(this.productCategoryListToolStripMenuItem_Click);
             // 
+
             // productToolStripMenuItem
             // 
             this.productToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -132,6 +143,7 @@ partial class CoffeeShopForm
             this.productListToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.productListToolStripMenuItem.Text = "List";
             this.productListToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem1_Click);
+
             // 
             // CoffeeShopForm
             // 
@@ -164,6 +176,8 @@ partial class CoffeeShopForm
     private ToolStripMenuItem productCategoriesToolStripMenuItem;
     private ToolStripMenuItem productCategoryListToolStripMenuItem;
     private ToolStripMenuItem coffeeShopStatusToolStripMenuItem;
+
     private ToolStripMenuItem productToolStripMenuItem;
     private ToolStripMenuItem productListToolStripMenuItem;
+
 }
