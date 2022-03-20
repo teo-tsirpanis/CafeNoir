@@ -219,7 +219,7 @@
             this.spinEditYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spinEditYear.Properties.IsFloatValue = false;
-            this.spinEditYear.Properties.MaskSettings.Set("mask", "N00");
+            this.spinEditYear.Properties.MaskSettings.Set("mask", "d");
             this.spinEditYear.Properties.MaxValue = new decimal(new int[] {
             2050,
             0,
