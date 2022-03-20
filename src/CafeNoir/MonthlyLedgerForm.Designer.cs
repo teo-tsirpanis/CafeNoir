@@ -119,9 +119,10 @@
             // 
             this.lookUpEditMonths.Location = new System.Drawing.Point(47, 12);
             this.lookUpEditMonths.Name = "lookUpEditMonths";
+            this.lookUpEditMonths.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.lookUpEditMonths.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEditMonths.Properties.NullText = "Months";
+            this.lookUpEditMonths.Properties.NullText = "";
             this.lookUpEditMonths.Size = new System.Drawing.Size(166, 20);
             this.lookUpEditMonths.StyleController = this.layoutControl1;
             this.lookUpEditMonths.TabIndex = 0;

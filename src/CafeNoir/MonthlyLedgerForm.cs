@@ -54,11 +54,10 @@ namespace CafeNoir {
             labelTotal.Text = "Profit: = " + _mTotal.ToString() + " €";
         }
         private List<Transaction> GetLedgerOfSelectedMonth(int year, int month) {
-            var list = CoffeeShop.Transactions;
             List<Transaction> transactionsConfirmed = new List<Transaction>();
             ResetFieldValues();
 
-            foreach (Transaction item in list) {
+            foreach (Transaction item in CoffeeShop.Transactions) {
                 if (item.Date.Year == year && item.Date.Month == month) {
                     _mIncome += item.TotalPrice;
                     _mExpenses += item.TotalCost;
@@ -66,7 +65,7 @@ namespace CafeNoir {
 
                 }
             }
-            return list;
+            return transactionsConfirmed;
         }
         private void ResetFieldValues() {
             _mIncome = 0;
