@@ -46,7 +46,7 @@ internal sealed class EmployeeCollection : Collection<Employee>
         var numEmployeesOfThisType = (uint)Items.Count(x => x.EmployeeType == type);
 
         if (numEmployeesOfThisType == maxEmployeesOfThisType)
-            throw new InvalidOperationException($"Cannot add more than {maxEmployeesOfThisType} employees");
+            throw new InvalidOperationException($"Cannot add more than {maxEmployeesOfThisType} {type}s");
         base.InsertItem(index, item);
     }
 
@@ -58,7 +58,7 @@ internal sealed class EmployeeCollection : Collection<Employee>
         uint minEmployeesOfThisType = _limits.GetLimitsForType(type).Min;
         var numEmployeesOfThisType = (uint)Items.Count(x => x.EmployeeType == type);
         if (numEmployeesOfThisType == minEmployeesOfThisType)
-            throw new InvalidOperationException($"Cannot add more than {minEmployeesOfThisType} employees");
+            throw new InvalidOperationException($"Cannot have less than {minEmployeesOfThisType} {type}s");
         base.RemoveItem(index);
     }
 

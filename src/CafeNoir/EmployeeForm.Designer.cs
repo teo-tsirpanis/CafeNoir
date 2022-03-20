@@ -32,11 +32,25 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNew = new DevExpress.XtraEditors.DropDownButton();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlEmployees = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSurname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmployeeType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSalaryPerMonth = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -48,12 +62,10 @@
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.bsCoffeeShop = new System.Windows.Forms.BindingSource(this.components);
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSurname = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEmployeeType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSalaryPerMonth = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -114,12 +126,102 @@
             // 
             this.btnNew.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNew.Appearance.Options.UseFont = true;
+            this.btnNew.DropDownControl = this.popupMenu1;
             this.btnNew.Location = new System.Drawing.Point(419, 414);
             this.btnNew.Name = "btnNew";
+            this.barManager1.SetPopupContextMenu(this.btnNew, this.popupMenu1);
             this.btnNew.Size = new System.Drawing.Size(81, 24);
             this.btnNew.StyleController = this.layoutControl1;
             this.btnNew.TabIndex = 8;
             this.btnNew.Text = "New";
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4)});
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Manager";
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.Tag = 0;
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addEmployeeDropDown_Click);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Cashier";
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.Tag = 1;
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addEmployeeDropDown_Click);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Barista";
+            this.barButtonItem3.Id = 2;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.Tag = 2;
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addEmployeeDropDown_Click);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Waiter";
+            this.barButtonItem4.Id = 3;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.Tag = 3;
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addEmployeeDropDown_Click);
+            // 
+            // barManager1
+            // 
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4});
+            this.barManager1.MaxItemId = 4;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(800, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 450);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(800, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 450);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(800, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 450);
             // 
             // btnSave
             // 
@@ -143,6 +245,7 @@
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // gridControlEmployees
             // 
@@ -164,6 +267,38 @@
             this.gridView1.GridControl = this.gridControlEmployees;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
+            // 
+            // colName
+            // 
+            this.colName.Caption = "Name";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            // 
+            // colSurname
+            // 
+            this.colSurname.Caption = "Surname";
+            this.colSurname.FieldName = "Surname";
+            this.colSurname.Name = "colSurname";
+            this.colSurname.Visible = true;
+            this.colSurname.VisibleIndex = 1;
+            // 
+            // colEmployeeType
+            // 
+            this.colEmployeeType.Caption = "Employee Type";
+            this.colEmployeeType.FieldName = "EmployeeType";
+            this.colEmployeeType.Name = "colEmployeeType";
+            this.colEmployeeType.Visible = true;
+            this.colEmployeeType.VisibleIndex = 2;
+            // 
+            // colSalaryPerMonth
+            // 
+            this.colSalaryPerMonth.Caption = "Salary per Month";
+            this.colSalaryPerMonth.FieldName = "SalaryPerMonth";
+            this.colSalaryPerMonth.Name = "colSalaryPerMonth";
+            this.colSalaryPerMonth.Visible = true;
+            this.colSalaryPerMonth.VisibleIndex = 3;
             // 
             // Root
             // 
@@ -251,46 +386,24 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(255, 28);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // colName
-            // 
-            this.colName.Caption = "Name";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 0;
-            // 
-            // colSurname
-            // 
-            this.colSurname.Caption = "Surname";
-            this.colSurname.Name = "colSurname";
-            this.colSurname.Visible = true;
-            this.colSurname.VisibleIndex = 1;
-            // 
-            // colEmployeeType
-            // 
-            this.colEmployeeType.Caption = "Employee Type";
-            this.colEmployeeType.Name = "colEmployeeType";
-            this.colEmployeeType.Visible = true;
-            this.colEmployeeType.VisibleIndex = 2;
-            // 
-            // colSalaryPerMonth
-            // 
-            this.colSalaryPerMonth.Caption = "Salary per Month";
-            this.colSalaryPerMonth.Name = "colSalaryPerMonth";
-            this.colSalaryPerMonth.Visible = true;
-            this.colSalaryPerMonth.VisibleIndex = 3;
-            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "EmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EmployeeForm";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -305,6 +418,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsCoffeeShop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -319,7 +433,7 @@
         private BindingSource bsCoffeeShop;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnClose;
-        private DevExpress.XtraEditors.SimpleButton btnNew;
+        private DevExpress.XtraEditors.DropDownButton btnNew;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
@@ -333,5 +447,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSurname;
         private DevExpress.XtraGrid.Columns.GridColumn colEmployeeType;
         private DevExpress.XtraGrid.Columns.GridColumn colSalaryPerMonth;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
     }
 }

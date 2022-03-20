@@ -23,16 +23,34 @@ namespace CafeNoir
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            //if (CoffeeShop.Customers.Count >= 1)
+            //{
+            //    MessageBox.Show(this, "There is an active customer!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
-            // if (CoffeeShop.Customers.Count >= 1)
-            // {
-            //     MessageBox.Show(this, "There is an active customer!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //     return;
-            // }
+            //var cdf = new CustomerDetailsForm(CoffeeShop, null);
+            //cdf.ShowDialog();
+            //gridView1.RefreshData();
+        }
 
-            // var cdf = new CustomerDetailsForm(CoffeeShop, null);
-            // cdf.ShowDialog();
-            // gridView1.RefreshData();
+        private void addEmployeeDropDown_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var employeeType = (EmployeeType)e.Item.Tag;
+
+            var employee = new Employee() { EmployeeType = employeeType };
+            try
+            {
+                _coffeeShop.Employess.Add(employee);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var edf = new EmployeeDetailsForm(_coffeeShop, employee);
+            edf.ShowDialog();
+            gridView1.RefreshData();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -42,7 +60,15 @@ namespace CafeNoir
                 return;
 
             var customer = bsEmployees.Current as Employee;
-            bsEmployees.Remove(customer);
+            try
+            {
+                bsEmployees.Remove(customer);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             _coffeeShop.SaveChanges();
         }
 

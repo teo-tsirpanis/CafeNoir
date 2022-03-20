@@ -23,4 +23,10 @@ public partial class EmployeeDetailsForm : Form
         cbEmployeeType.DataBindings.Add("EditValue", bsEmployee, nameof(Employee.EmployeeType));
         teSalaryPerMonth.DataBindings.Add("EditValue", bsEmployee, nameof(Employee.SalaryPerMonth));
     }
+
+    private void btnSave_Click(object sender, EventArgs e)
+    {
+        _coffeeShop.SaveChanges();
+        DialogResult = DialogResult.OK;
+    }
 }

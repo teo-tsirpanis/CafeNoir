@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.teName = new DevExpress.XtraEditors.TextEdit();
             this.teSurname = new DevExpress.XtraEditors.TextEdit();
             this.cbEmployeeType = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -44,7 +43,6 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bsEmployee = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -60,13 +58,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.btnCancel);
             this.layoutControl1.Controls.Add(this.teName);
             this.layoutControl1.Controls.Add(this.teSurname);
             this.layoutControl1.Controls.Add(this.cbEmployeeType);
@@ -80,15 +76,6 @@
             this.layoutControl1.Size = new System.Drawing.Size(800, 450);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(714, 416);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(74, 22);
-            this.btnCancel.StyleController = this.layoutControl1;
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancel";
             // 
             // teName
             // 
@@ -131,10 +118,11 @@
             // 
             this.btnSave.Location = new System.Drawing.Point(633, 416);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(77, 22);
+            this.btnSave.Size = new System.Drawing.Size(155, 22);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Root
             // 
@@ -147,8 +135,7 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.emptySpaceItem2,
-            this.emptySpaceItem1,
-            this.layoutControlItem6});
+            this.emptySpaceItem1});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(800, 450);
             this.Root.TextVisible = false;
@@ -195,7 +182,7 @@
             this.layoutControlItem5.Control = this.btnSave;
             this.layoutControlItem5.Location = new System.Drawing.Point(621, 404);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(81, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(159, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -215,15 +202,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(621, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.btnCancel;
-            this.layoutControlItem6.Location = new System.Drawing.Point(702, 404);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(78, 26);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
-            // 
             // EmployeeDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -231,6 +209,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.layoutControl1);
             this.Name = "EmployeeDetailsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EmployeeDetailsForm";
             this.Load += new System.EventHandler(this.EmployeeDetailsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -247,7 +226,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmployee)).EndInit();
             this.ResumeLayout(false);
 
@@ -270,7 +248,5 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraEditors.SimpleButton btnCancel;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }
