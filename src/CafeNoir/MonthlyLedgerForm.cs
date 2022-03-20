@@ -21,7 +21,10 @@ namespace CafeNoir {
         private void btnClose_Click(object sender, EventArgs e) {
             this.Close();
         }
-        private void simpleButtonShow_Click(object sender, EventArgs e) {
+        private void lookUpEditMonths_EditValueChanged(object sender, EventArgs e) {
+            UpdateMonthlyLedger();
+        }
+        private void spinEditYear_EditValueChanged(object sender, EventArgs e) {
             UpdateMonthlyLedger();
         }
         #endregion
@@ -53,7 +56,7 @@ namespace CafeNoir {
         private List<Transaction> GetLedgerOfSelectedMonth(int year, int month) {
             var list = CoffeeShop.Transactions;
             List<Transaction> transactionsConfirmed = new List<Transaction>();
-
+            ResetFieldValues();
 
             foreach (Transaction item in list) {
                 if (item.Date.Year == year && item.Date.Month == month) {
@@ -65,6 +68,14 @@ namespace CafeNoir {
             }
             return list;
         }
+        private void ResetFieldValues() {
+            _mIncome = 0;
+            _mExpenses = 0;
+            _mFixedExpenses = 0;
+            _mTotal = 0;
+        }
         #endregion
+
+
     }
 }

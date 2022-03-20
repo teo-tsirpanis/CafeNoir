@@ -56,6 +56,6 @@ internal static class ControlExtensions
         lookup.DisplayMember = "Value";
         lookup.ValueMember = "Key";
         lookup.ShowHeader = false;
-        lookup.NullText = null;
+        
     }
 }

@@ -25,9 +25,9 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.labelTotal = new System.Windows.Forms.Label();
             this.lookUpEditMonths = new DevExpress.XtraEditors.LookUpEdit();
-            this.simpleButtonShow = new DevExpress.XtraEditors.SimpleButton();
             this.labelFixedExpenses = new System.Windows.Forms.Label();
             this.labelExpenses = new System.Windows.Forms.Label();
             this.labelIncome = new System.Windows.Forms.Label();
@@ -44,18 +44,16 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.bsTransactions = new System.Windows.Forms.BindingSource(this.components);
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditMonths.Properties)).BeginInit();
@@ -68,17 +66,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -86,7 +83,6 @@
             this.layoutControl1.Controls.Add(this.btnClose);
             this.layoutControl1.Controls.Add(this.labelTotal);
             this.layoutControl1.Controls.Add(this.lookUpEditMonths);
-            this.layoutControl1.Controls.Add(this.simpleButtonShow);
             this.layoutControl1.Controls.Add(this.labelFixedExpenses);
             this.layoutControl1.Controls.Add(this.labelExpenses);
             this.layoutControl1.Controls.Add(this.labelIncome);
@@ -100,6 +96,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(800, 450);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(652, 416);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(136, 22);
+            this.btnClose.StyleController = this.layoutControl1;
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Close";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // labelTotal
             // 
@@ -119,16 +125,7 @@
             this.lookUpEditMonths.Size = new System.Drawing.Size(166, 20);
             this.lookUpEditMonths.StyleController = this.layoutControl1;
             this.lookUpEditMonths.TabIndex = 0;
-            // 
-            // simpleButtonShow
-            // 
-            this.simpleButtonShow.Location = new System.Drawing.Point(12, 60);
-            this.simpleButtonShow.Name = "simpleButtonShow";
-            this.simpleButtonShow.Size = new System.Drawing.Size(776, 22);
-            this.simpleButtonShow.StyleController = this.layoutControl1;
-            this.simpleButtonShow.TabIndex = 3;
-            this.simpleButtonShow.Text = "Show";
-            this.simpleButtonShow.Click += new System.EventHandler(this.simpleButtonShow_Click);
+            this.lookUpEditMonths.EditValueChanged += new System.EventHandler(this.lookUpEditMonths_EditValueChanged);
             // 
             // labelFixedExpenses
             // 
@@ -156,10 +153,10 @@
             // 
             // grdTransactions
             // 
-            this.grdTransactions.Location = new System.Drawing.Point(12, 86);
+            this.grdTransactions.Location = new System.Drawing.Point(12, 60);
             this.grdTransactions.MainView = this.grvTransactions;
             this.grdTransactions.Name = "grdTransactions";
-            this.grdTransactions.Size = new System.Drawing.Size(776, 216);
+            this.grdTransactions.Size = new System.Drawing.Size(776, 242);
             this.grdTransactions.TabIndex = 4;
             this.grdTransactions.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvTransactions});
@@ -234,6 +231,7 @@
             this.spinEditYear.Size = new System.Drawing.Size(167, 20);
             this.spinEditYear.StyleController = this.layoutControl1;
             this.spinEditYear.TabIndex = 2;
+            this.spinEditYear.EditValueChanged += new System.EventHandler(this.spinEditYear_EditValueChanged);
             // 
             // Root
             // 
@@ -245,7 +243,6 @@
             this.layoutControlItem3,
             this.layoutControlItem2,
             this.layoutControlItem4,
-            this.layoutControlItem5,
             this.layoutControlItem6,
             this.emptySpaceItem1,
             this.emptySpaceItem3,
@@ -267,9 +264,9 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.grdTransactions;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 74);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(780, 220);
+            this.layoutControlItem1.Size = new System.Drawing.Size(780, 246);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -299,15 +296,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(780, 24);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.simpleButtonShow;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(780, 26);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
@@ -345,24 +333,6 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(205, 0);
-            this.emptySpaceItem2.Name = "emptySpaceItem1";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(575, 24);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(652, 416);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(136, 22);
-            this.btnClose.StyleController = this.layoutControl1;
-            this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "Close";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnClose;
@@ -371,6 +341,22 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(140, 26);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
+            // 
+            // emptySpaceItem6
+            // 
+            this.emptySpaceItem6.AllowHotTrack = false;
+            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 404);
+            this.emptySpaceItem6.Name = "emptySpaceItem6";
+            this.emptySpaceItem6.Size = new System.Drawing.Size(640, 26);
+            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(205, 0);
+            this.emptySpaceItem2.Name = "emptySpaceItem1";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(575, 24);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
             // 
@@ -387,14 +373,6 @@
             this.emptySpaceItem5.Name = "emptySpaceItem3";
             this.emptySpaceItem5.Size = new System.Drawing.Size(575, 24);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem6
-            // 
-            this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 404);
-            this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(640, 26);
-            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // MonthlyLedgerForm
             // 
@@ -418,17 +396,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransactions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -448,8 +425,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private Label labelFixedExpenses;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonShow;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private BindingSource bsTransactions;
         private DevExpress.XtraGrid.Columns.GridColumn colDate;
         private DevExpress.XtraGrid.Columns.GridColumn colEmployeeID;
