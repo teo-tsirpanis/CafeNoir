@@ -2,7 +2,7 @@
 
 public class Product {
     public Guid ID { get; set; } = Guid.NewGuid();
-    public string Code { get; set; } 
+    public string Code { get; set; }
     public string Description { get; set; }
     public Guid ProductCategoryID { get; set; }
     public decimal Price { get; set; }
@@ -14,14 +14,9 @@ public class Product {
 
     public Product ShallowCopy() {
         return (Product)MemberwiseClone();
+    }
 
-
-    public Product(Guid productCategoryID)
-    {
+    public Product(Guid productCategoryID) {
         ProductCategoryID = productCategoryID;
     }
-
-
-    }
-
 }
