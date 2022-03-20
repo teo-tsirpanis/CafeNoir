@@ -42,8 +42,7 @@ namespace CafeNoir {
             int month = Convert.ToInt32(lookUpEditMonths.EditValue);
 
             var transactionsConfirmed = GetLedgerOfSelectedMonth(year, month);
-            bsTransactions.DataSource = transactionsConfirmed;
-            grdTransactions.DataSource = bsTransactions;
+            SetUpDataSources(transactionsConfirmed);
         }
         private void UpdateFields() {
             _mFixedExpenses = CoffeeShop.RentingCost;
@@ -73,8 +72,10 @@ namespace CafeNoir {
             _mFixedExpenses = 0;
             _mTotal = 0;
         }
+        private void SetUpDataSources(List<Transaction> transactionsConfirmed) {
+            bsTransactions.DataSource = transactionsConfirmed;
+            grdTransactions.DataSource = bsTransactions;
+        }
         #endregion
-
-
     }
 }
