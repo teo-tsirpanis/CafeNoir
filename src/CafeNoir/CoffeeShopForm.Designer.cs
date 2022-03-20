@@ -35,20 +35,16 @@ partial class CoffeeShopForm
             this.coffeeShopStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productCategoryListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listToolStripMenuProduct = new System.Windows.Forms.ToolStripMenuItem();
+            this.productCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productCategoryListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listToolStripMenuEmployees = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listToolStripMenuTransaction = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyLedgerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,8 +56,8 @@ partial class CoffeeShopForm
             this.customersToolStripMenuItem,
             this.productToolStripMenuItem,
             this.productCategoriesToolStripMenuItem,
-
-            this.productToolStripMenuItem});
+            this.employeesToolStripMenuItem,
+            this.transactionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(900, 24);
@@ -81,21 +77,21 @@ partial class CoffeeShopForm
             // reloadToolStripMenuItem
             // 
             this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
-            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.reloadToolStripMenuItem.Text = "Reload";
             this.reloadToolStripMenuItem.Click += new System.EventHandler(this.reloadToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // coffeeShopStatusToolStripMenuItem
             // 
             this.coffeeShopStatusToolStripMenuItem.Name = "coffeeShopStatusToolStripMenuItem";
-            this.coffeeShopStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.coffeeShopStatusToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.coffeeShopStatusToolStripMenuItem.Text = "CoffeeShop Status";
             this.coffeeShopStatusToolStripMenuItem.Click += new System.EventHandler(this.coffeeShopStatusToolStripMenuItem_Click);
             // 
@@ -155,8 +151,9 @@ partial class CoffeeShopForm
             // listToolStripMenuEmployees
             // 
             this.listToolStripMenuEmployees.Name = "listToolStripMenuEmployees";
-            this.listToolStripMenuEmployees.Size = new System.Drawing.Size(92, 22);
+            this.listToolStripMenuEmployees.Size = new System.Drawing.Size(180, 22);
             this.listToolStripMenuEmployees.Text = "List";
+            this.listToolStripMenuEmployees.Click += new System.EventHandler(this.listEmployeesToolStripMenuItem_Click);
             // 
             // transactionToolStripMenuItem
             // 
@@ -180,14 +177,6 @@ partial class CoffeeShopForm
             this.monthlyLedgerToolStripMenuItem.Text = "Monthly Ledger";
             this.monthlyLedgerToolStripMenuItem.Click += new System.EventHandler(this.monthlyLedgerToolStripMenuItem_Click);
             // 
-            // employeesToolStripMenuItem
-            // 
-            this.employeesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listEmployeesToolStripMenuItem});
-            this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.employeesToolStripMenuItem.Text = "Employees";
-            // 
             // listEmployeesToolStripMenuItem
             // 
             this.listEmployeesToolStripMenuItem.Name = "listEmployeesToolStripMenuItem";
@@ -210,7 +199,6 @@ partial class CoffeeShopForm
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
     }
 
     #endregion
@@ -226,10 +214,7 @@ partial class CoffeeShopForm
     private ToolStripMenuItem coffeeShopStatusToolStripMenuItem;
     private ToolStripMenuItem employeesToolStripMenuItem;
     private ToolStripMenuItem listEmployeesToolStripMenuItem;
-    private ToolStripMenuItem transactionsToolStripMenuItem;
-    private ToolStripMenuItem listToolStripMenuItem1;
     private ToolStripMenuItem productToolStripMenuItem;
-    private ToolStripMenuItem productListToolStripMenuItem;
     private ToolStripMenuItem listToolStripMenuProduct;
     private ToolStripMenuItem listToolStripMenuEmployees;
     private ToolStripMenuItem transactionToolStripMenuItem;
