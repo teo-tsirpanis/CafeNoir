@@ -7,7 +7,7 @@ public partial class ProductForm : Form
 {
     private string _formName = "Products";
 
-    public CoffeeShop CoffeeShop { get; }
+    public CoffeeShop CoffeeShop { get; set; }
     public ProductForm(CoffeeShop coffeeShop)
     {
         CoffeeShop = coffeeShop;
@@ -47,25 +47,23 @@ public partial class ProductForm : Form
     #region Methods
     private void OpenDetailsPage()
     {
-        var productDetailsForm = new ProductDetailsForm(CoffeeShop);
+        var productDetailsForm = new ProductDF(CoffeeShop, null);
         productDetailsForm.ShowDialog();
-        grdProduct.RefreshData();
+        grvProducts.RefreshData();
     }
-    private void OpenDetailsPage(Product currentProduct)
-    {
-        var productDetailsForm = new ProductDetailsForm(CoffeeShop, currentProduct);
+    private void OpenDetailsPage(Product currentProduct) {
+        var productDetailsForm = new ProductDF(CoffeeShop, currentProduct);
         productDetailsForm.ShowDialog();
-        grdProduct.RefreshData();
+        grvProducts.RefreshData();
     }
     private void SetUpBindings()
     {
         bsCoffeeShop.DataSource = CoffeeShop;
+        bsProduct.DataSource = CoffeeShop.Products;
+        //bsProduct.DataMember = nameof(CoffeeShop.Products);
+        grdProducts.DataSource = bsProduct;
 
-        bsProduct.DataSource = bsCoffeeShop;
-        bsProduct.DataMember = nameof(CoffeeShop.Products);
-
-        gridControlProduct.DataSource = bsProduct;
-    }
+     }
     private bool DeletionIsConfirmed()
     {
         if (CoffeeShop.Products.Count < 1)
@@ -76,8 +74,8 @@ public partial class ProductForm : Form
 
     private void DeleteCategory()
     {
-        var student = bsProduct.Current as ProductCategory;
-        bsProduct.Remove(student);
+        var prd = bsProduct.Current as Product;
+        bsProduct.Remove(prd);
         CoffeeShop.SaveChanges();
     }
 

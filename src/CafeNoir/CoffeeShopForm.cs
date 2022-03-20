@@ -46,18 +46,18 @@ public partial class CoffeeShopForm : Form
         productCategoryForm.ShowDialog();
     }
 
-    private void listToolStripMenuItem1_Click(object sender, EventArgs e) {
+    //private void listToolStripMenuItem1_Click(object sender, EventArgs e) {
 
-        var trans = new Transaction() {
-            ID = new Guid(),
-            CustomerID = new Guid(),
-            EmployeeID = new Guid(),
+    //    var trans = new Transaction() {
+    //        ID = new Guid(),
+    //        CustomerID = new Guid(),
+    //        EmployeeID = new Guid(),
 
-        };
-        _coffeeshop.Transactions.Add(trans);
-        var transactionForm = new TransactionForm(_coffeeshop);
-        transactionForm.ShowDialog();
-    }
+    //    };
+    //    _coffeeshop.Transactions.Add(trans);
+    //    var transactionForm = new TransactionForm(_coffeeshop);
+    //    transactionForm.ShowDialog();
+    //}
 
     private void coffeeShopStatusToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -73,8 +73,19 @@ public partial class CoffeeShopForm : Form
 
     private void listToolStripMenuItem1_Click(object sender, EventArgs e)
     {
-        var productForm = new ProductForm(_coffeeshop);
-        productForm.ShowDialog();
+
     }
 
+    private void listToolStripMenuItem2_Click(object sender, EventArgs e) {
+    
+            var productForm = new ProductForm(_coffeeshop);
+            productForm.ShowDialog();
+
+    }
+
+    private void listToolStripMenuItem1_Click_1(object sender, EventArgs e) {
+        var transactionForm = new TransactionForm(_coffeeshop);
+        transactionForm.ShowDialog();
+
+    }
 }

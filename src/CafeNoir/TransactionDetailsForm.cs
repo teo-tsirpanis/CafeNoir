@@ -2,6 +2,8 @@
 
 namespace CafeNoir {
     public partial class TransactionDetailsForm : Form {
+
+        private string _defaultQuantity = "1";
         public CoffeeShop CoffeeShop { get; }
         public Transaction NewTransaction { get; set; }
         public Employee Employee { get; }
@@ -28,7 +30,10 @@ namespace CafeNoir {
             var selectedProduct = bsProducts.Current as Product;
             if (selectedProduct != null) {
                 AddNewLine(selectedProduct);
+                ResetQuantity();
             }
+
+
 
         }
         private void btnCancel_Click(object sender, EventArgs e) {
@@ -92,7 +97,12 @@ namespace CafeNoir {
             THandler.UpdateTotalCost(NewTransaction);
             THandler.UpdateTotalPrice(NewTransaction);
         }
-        #endregion
+        private void ResetQuantity() {
+            spinEditQuantity.Text = _defaultQuantity;
+        }
 
+
+        #endregion
     }
+
 }
