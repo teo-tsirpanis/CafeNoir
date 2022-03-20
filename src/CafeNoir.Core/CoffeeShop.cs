@@ -45,6 +45,7 @@ namespace CafeNoir.Core
         public List<ProductCategory> ProductCats => _dto.ProductCats;
         public List<Employee> Employess => _dto.Employees;
         public List<Transaction> Transactions => _dto.Transactions;
+        public decimal RentingCost { get; set; } = 3000m;
 
         public Customer RetailCustomer { get; }
 

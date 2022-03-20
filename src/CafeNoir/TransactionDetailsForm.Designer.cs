@@ -164,6 +164,7 @@
             this.grvTransactionLines.GridControl = this.gridTransactionLines;
             this.grvTransactionLines.Name = "grvTransactionLines";
             this.grvTransactionLines.OptionsBehavior.Editable = false;
+            this.grvTransactionLines.OptionsView.ShowGroupPanel = false;
             // 
             // colQuantity
             // 
@@ -266,6 +267,7 @@
             this.grvProducts.GridControl = this.gridProducts;
             this.grvProducts.Name = "grvProducts";
             this.grvProducts.OptionsBehavior.Editable = false;
+            this.grvProducts.OptionsView.ShowGroupPanel = false;
             // 
             // colCode
             // 
