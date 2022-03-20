@@ -19,6 +19,10 @@ namespace CafeNoir {
         }
         private void btnNew_Click(object sender, EventArgs e) {
             var employee = bsEmployees.Current as Employee;
+            if (employee == null) {
+                MessageBox.Show("We need an employee");
+                return;
+            }
             if (employee.EmployeeType != EmployeeType.Cashier) {
                 MessageBox.Show("You have to pick a cashier!");
                 return;

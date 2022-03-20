@@ -38,11 +38,11 @@ partial class CoffeeShopForm
             this.productCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productCategoryListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listToolStripMenuProduct = new System.Windows.Forms.ToolStripMenuItem();
             this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listToolStripMenuEmployees = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listToolStripMenuTransaction = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,21 +75,21 @@ partial class CoffeeShopForm
             // reloadToolStripMenuItem
             // 
             this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
-            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.reloadToolStripMenuItem.Text = "Reload";
             this.reloadToolStripMenuItem.Click += new System.EventHandler(this.reloadToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // coffeeShopStatusToolStripMenuItem
             // 
             this.coffeeShopStatusToolStripMenuItem.Name = "coffeeShopStatusToolStripMenuItem";
-            this.coffeeShopStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.coffeeShopStatusToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.coffeeShopStatusToolStripMenuItem.Text = "CoffeeShop Status";
             this.coffeeShopStatusToolStripMenuItem.Click += new System.EventHandler(this.coffeeShopStatusToolStripMenuItem_Click);
             // 
@@ -104,7 +104,7 @@ partial class CoffeeShopForm
             // listToolStripMenuItem
             // 
             this.listToolStripMenuItem.Name = "listToolStripMenuItem";
-            this.listToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.listToolStripMenuItem.Text = "List";
             this.listToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem_Click);
             // 
@@ -119,52 +119,53 @@ partial class CoffeeShopForm
             // productCategoryListToolStripMenuItem
             // 
             this.productCategoryListToolStripMenuItem.Name = "productCategoryListToolStripMenuItem";
-            this.productCategoryListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productCategoryListToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.productCategoryListToolStripMenuItem.Text = "List";
             this.productCategoryListToolStripMenuItem.Click += new System.EventHandler(this.productCategoryListToolStripMenuItem_Click);
             // 
             // productToolStripMenuItem
             // 
             this.productToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listToolStripMenuItem2});
+            this.listToolStripMenuProduct});
             this.productToolStripMenuItem.Name = "productToolStripMenuItem";
             this.productToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.productToolStripMenuItem.Text = "Product";
             // 
+            // listToolStripMenuProduct
+            // 
+            this.listToolStripMenuProduct.Name = "listToolStripMenuProduct";
+            this.listToolStripMenuProduct.Size = new System.Drawing.Size(180, 22);
+            this.listToolStripMenuProduct.Text = "List";
+            this.listToolStripMenuProduct.Click += new System.EventHandler(this.listToolStripMenuItem2_Click);
+            // 
             // employeesToolStripMenuItem
             // 
             this.employeesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listToolStripMenuItem3});
+            this.listToolStripMenuEmployees});
             this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
             this.employeesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.employeesToolStripMenuItem.Text = "Employees";
             // 
+            // listToolStripMenuEmployees
+            // 
+            this.listToolStripMenuEmployees.Name = "listToolStripMenuEmployees";
+            this.listToolStripMenuEmployees.Size = new System.Drawing.Size(180, 22);
+            this.listToolStripMenuEmployees.Text = "List";
+            // 
             // transactionToolStripMenuItem
             // 
             this.transactionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listToolStripMenuItem1});
+            this.listToolStripMenuTransaction});
             this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
             this.transactionToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.transactionToolStripMenuItem.Text = "Transaction";
             // 
-            // listToolStripMenuItem1
+            // listToolStripMenuTransaction
             // 
-            this.listToolStripMenuItem1.Name = "listToolStripMenuItem1";
-            this.listToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.listToolStripMenuItem1.Text = "List";
-            // 
-            // listToolStripMenuItem2
-            // 
-            this.listToolStripMenuItem2.Name = "listToolStripMenuItem2";
-            this.listToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.listToolStripMenuItem2.Text = "List";
-            this.listToolStripMenuItem2.Click += new System.EventHandler(this.listToolStripMenuItem2_Click);
-            // 
-            // listToolStripMenuItem3
-            // 
-            this.listToolStripMenuItem3.Name = "listToolStripMenuItem3";
-            this.listToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
-            this.listToolStripMenuItem3.Text = "List";
+            this.listToolStripMenuTransaction.Name = "listToolStripMenuTransaction";
+            this.listToolStripMenuTransaction.Size = new System.Drawing.Size(180, 22);
+            this.listToolStripMenuTransaction.Text = "List";
+            this.listToolStripMenuTransaction.Click += new System.EventHandler(this.listToolStripMenuItem1_Click_1);
             // 
             // CoffeeShopForm
             // 
@@ -198,8 +199,8 @@ partial class CoffeeShopForm
     private ToolStripMenuItem coffeeShopStatusToolStripMenuItem;
     private ToolStripMenuItem productToolStripMenuItem;
     private ToolStripMenuItem employeesToolStripMenuItem;
-    private ToolStripMenuItem listToolStripMenuItem2;
-    private ToolStripMenuItem listToolStripMenuItem3;
+    private ToolStripMenuItem listToolStripMenuProduct;
+    private ToolStripMenuItem listToolStripMenuEmployees;
     private ToolStripMenuItem transactionToolStripMenuItem;
-    private ToolStripMenuItem listToolStripMenuItem1;
+    private ToolStripMenuItem listToolStripMenuTransaction;
 }

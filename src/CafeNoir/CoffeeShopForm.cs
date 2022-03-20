@@ -82,4 +82,10 @@ public partial class CoffeeShopForm : Form
             productForm.ShowDialog();
 
     }
+
+    private void listToolStripMenuItem1_Click_1(object sender, EventArgs e) {
+        var transactionForm = new TransactionForm(_coffeeshop);
+        transactionForm.ShowDialog();
+
+    }
 }
