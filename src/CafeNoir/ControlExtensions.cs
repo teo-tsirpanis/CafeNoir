@@ -33,4 +33,29 @@ internal static class ControlExtensions
         lookup.ValueMember = "Key";
         lookup.ShowHeader = false;
     }
+
+    public static void PopulateLedgerMonths(RepositoryItemLookUpEdit lookup) {
+
+        Dictionary<Months, string> months = new Dictionary<Months, string>();
+        months.Add(Months.January, "Januray");
+        months.Add(Months.February, "February");
+        months.Add(Months.March, "March");
+        months.Add(Months.April, "April");
+        months.Add(Months.May, "May");
+        months.Add(Months.June, "June");
+        months.Add(Months.July, "July");
+        months.Add(Months.August, "August");
+        months.Add(Months.September, "September");
+        months.Add(Months.October, "October");
+        months.Add(Months.November, "November");
+        months.Add(Months.December, "December");
+
+
+        lookup.DataSource = months;
+        lookup.Columns.Add(new LookUpColumnInfo("Value"));
+        lookup.DisplayMember = "Value";
+        lookup.ValueMember = "Key";
+        lookup.ShowHeader = false;
+        lookup.NullText = null;
+    }
 }
