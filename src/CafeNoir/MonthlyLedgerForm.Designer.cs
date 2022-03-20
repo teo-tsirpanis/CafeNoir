@@ -117,6 +117,7 @@
             // 
             // lookUpEditMonths
             // 
+            this.lookUpEditMonths.EditValue = 1;
             this.lookUpEditMonths.Location = new System.Drawing.Point(47, 12);
             this.lookUpEditMonths.Name = "lookUpEditMonths";
             this.lookUpEditMonths.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;

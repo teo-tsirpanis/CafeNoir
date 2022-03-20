@@ -15,6 +15,7 @@ namespace CafeNoir {
         private void MonthlyLedgerForm_Load(object sender, EventArgs e) {
 
             ControlExtensions.PopulateLedgerMonths(lookUpEditMonths.Properties);
+            lookUpEditMonths.EditValue = Months.January;
             UpdateFields();
         }
         #region UI
