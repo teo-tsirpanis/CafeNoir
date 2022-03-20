@@ -3,15 +3,15 @@
 namespace CafeNoir;
 public partial class ProductCategoryDetailsForm : Form
 {
+    private readonly ProductCategory? _originalProductCategory;
     private ProductCategory? _changedProductCategory;
-    private ProductCategory? _originalProductCategory;
     private readonly CoffeeShop _coffeeShop;
 
     public ProductCategoryDetailsForm(CoffeeShop coffeeShop, ProductCategory? productCategory = null)
     {
         _coffeeShop = coffeeShop;
-        _changedProductCategory = productCategory;
-        _originalProductCategory = productCategory?.ShallowCopy();
+        _originalProductCategory = productCategory;
+        _changedProductCategory = productCategory?.ShallowCopy();
         InitializeComponent();
         ControlExtensions.PopulateProductType(ctrlType.Properties);
     }

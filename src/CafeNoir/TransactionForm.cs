@@ -44,7 +44,7 @@ namespace CafeNoir {
             bsTransactions.DataSource = CoffeeShop.Transactions;
             gridTransactions.DataSource = bsTransactions;
 
-            bsEmployees.DataSource = CoffeeShop.Employess;
+            bsEmployees.DataSource = CoffeeShop.Employees;
             gridEmployees.DataSource = bsEmployees;
         }
         #endregion

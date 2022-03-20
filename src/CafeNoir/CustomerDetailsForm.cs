@@ -1,12 +1,9 @@
-﻿using CafeNoir.Core;
-using System.IO;
-using System.Text.Json;
+using CafeNoir.Core;
 
 namespace CafeNoir
 {
     public partial class CustomerDetailsForm : Form
     {
-        private const string FILE_NAME = "coffeeshop.json";
         public CoffeeShop CoffeeShop { get; }
         public Customer Customer { get; }
         public Customer _oldCustomer;
@@ -17,8 +14,8 @@ namespace CafeNoir
 
             if (customer == null)
             {
-                Customer = new Customer("0001");
-                CoffeeShop.Customers.Add(Customer);
+                customer = new Customer($"{CoffeeShop.Customers.Count:D3}");
+                CoffeeShop.Customers.Add(customer);
             }
             else {
                 Customer = customer;    
@@ -39,13 +36,8 @@ namespace CafeNoir
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            ////CoffeeShop.Customers.Add(Customer);
-            //string json = JsonSerializer.Serialize(CoffeeShop);
-            //File.WriteAllText(FILE_NAME, json);
-            //DialogResult = DialogResult.OK;
             CoffeeShop.SaveChanges();
-            Close();
-
+            DialogResult = DialogResult.OK;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

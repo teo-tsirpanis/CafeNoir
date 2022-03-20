@@ -40,10 +40,12 @@ namespace CafeNoir.Core
 
         private Dto _dto;
 
+        private CoffeeShopLimits _limits;
+
         public List<Customer> Customers => _dto.Customers;
         public List<Product> Products => _dto.Products;
         public List<ProductCategory> ProductCats => _dto.ProductCats;
-        public List<Employee> Employess => _dto.Employees;
+        public ICollection<Employee> Employees { get; }
         public List<Transaction> Transactions => _dto.Transactions;
         public decimal RentingCost { get; set; } = 3000m;
 
@@ -70,8 +72,9 @@ namespace CafeNoir.Core
             return retailCustomerMaybe;
         }
 
-        public CoffeeShop(string? dataPath, out bool createdNew)
+        public CoffeeShop(string? dataPath, CoffeeShopLimits? limits, out bool createdNew)
         {
+            _limits ??= CoffeeShopLimits.Default;
             createdNew = true;
 
             _dataPath = dataPath;
@@ -84,6 +87,7 @@ namespace CafeNoir.Core
 
             _dto = dto ?? new();
 
+            Employees = new EmployeeCollection(_dto.Employees, _limits);
             RetailCustomer = GetOrCreateRetailCustomer();
         }
 
