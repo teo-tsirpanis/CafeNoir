@@ -103,6 +103,7 @@
             this.grvProducts.GridControl = this.grdProducts;
             this.grvProducts.Name = "grvProducts";
             this.grvProducts.OptionsBehavior.Editable = false;
+            this.grvProducts.OptionsView.ShowGroupPanel = false;
             // 
             // colCode
             // 

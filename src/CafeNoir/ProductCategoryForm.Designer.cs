@@ -136,6 +136,7 @@
             this.grdProductCategories.GridControl = this.gridControlProductCategories;
             this.grdProductCategories.Name = "grdProductCategories";
             this.grdProductCategories.OptionsBehavior.Editable = false;
+            this.grdProductCategories.OptionsView.ShowGroupPanel = false;
             // 
             // colCode
             // 

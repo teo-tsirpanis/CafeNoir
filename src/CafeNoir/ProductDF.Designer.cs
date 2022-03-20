@@ -104,6 +104,7 @@
             this.grvProductCategoryID.GridControl = this.grdProductCategoryID;
             this.grvProductCategoryID.Name = "grvProductCategoryID";
             this.grvProductCategoryID.OptionsBehavior.Editable = false;
+            this.grvProductCategoryID.OptionsView.ShowGroupPanel = false;
             // 
             // colID
             // 

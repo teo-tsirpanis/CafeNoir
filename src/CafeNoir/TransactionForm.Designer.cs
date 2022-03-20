@@ -91,6 +91,7 @@
             this.grvEmployees.GridControl = this.gridEmployees;
             this.grvEmployees.Name = "grvEmployees";
             this.grvEmployees.OptionsBehavior.Editable = false;
+            this.grvEmployees.OptionsView.ShowGroupPanel = false;
             // 
             // colName
             // 
@@ -151,6 +152,7 @@
             this.grvTransactions.GridControl = this.gridTransactions;
             this.grvTransactions.Name = "grvTransactions";
             this.grvTransactions.OptionsBehavior.Editable = false;
+            this.grvTransactions.OptionsView.ShowGroupPanel = false;
             // 
             // Root
             // 

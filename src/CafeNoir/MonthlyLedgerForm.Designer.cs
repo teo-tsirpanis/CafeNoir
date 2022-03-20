@@ -173,6 +173,7 @@
             this.grvTransactions.GridControl = this.grdTransactions;
             this.grvTransactions.Name = "grvTransactions";
             this.grvTransactions.OptionsBehavior.Editable = false;
+            this.grvTransactions.OptionsView.ShowGroupPanel = false;
             // 
             // colDate
             // 
