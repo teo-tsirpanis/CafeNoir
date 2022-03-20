@@ -19,7 +19,9 @@ namespace CafeNoir {
             CoffeeShop = _coffeeShop;
             InitializeComponent();
         }
-
+        private void btnClose_Click(object sender, EventArgs e) {
+            this.Close();
+        }
         private void simpleButtonShow_Click(object sender, EventArgs e) {
             int year = Convert.ToInt32(spinEditYear.EditValue);
             int month = Convert.ToInt32(lookUpEditMonths.EditValue);
@@ -51,7 +53,7 @@ namespace CafeNoir {
 
             labelExpenses.Text = "Expenses: "+expenses.ToString()+ " €";
             labelIncome.Text = "Income: "+income.ToString() + " €";
-            labelProfit.Text = "Profit: "+profit.ToString() + " €";
+            labelFixedExpenses.Text = "Profit: "+profit.ToString() + " €";
 
         }
 
@@ -61,9 +63,5 @@ namespace CafeNoir {
 
            ControlExtensions.PopulateLedgerMonths(lookUpEditMonths.Properties);
         }
-
-
-
-
     }
 }
