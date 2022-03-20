@@ -35,6 +35,8 @@
             this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductCategoryID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCost = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
@@ -48,8 +50,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bsProduct = new System.Windows.Forms.BindingSource(this.components);
             this.bsCoffeeShop = new System.Windows.Forms.BindingSource(this.components);
-            this.colCost = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdProducts)).BeginInit();
@@ -102,6 +102,7 @@
             this.colPrice});
             this.grvProducts.GridControl = this.grdProducts;
             this.grvProducts.Name = "grvProducts";
+            this.grvProducts.OptionsBehavior.Editable = false;
             // 
             // colCode
             // 
@@ -126,6 +127,22 @@
             this.colProductCategoryID.Name = "colProductCategoryID";
             this.colProductCategoryID.Visible = true;
             this.colProductCategoryID.VisibleIndex = 2;
+            // 
+            // colCost
+            // 
+            this.colCost.Caption = "Cost";
+            this.colCost.FieldName = "Cost";
+            this.colCost.Name = "colCost";
+            this.colCost.Visible = true;
+            this.colCost.VisibleIndex = 3;
+            // 
+            // colPrice
+            // 
+            this.colPrice.Caption = "Price";
+            this.colPrice.FieldName = "Price";
+            this.colPrice.Name = "colPrice";
+            this.colPrice.Visible = true;
+            this.colPrice.VisibleIndex = 4;
             // 
             // btnClose
             // 
@@ -238,22 +255,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(800, 391);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // colCost
-            // 
-            this.colCost.Caption = "Cost";
-            this.colCost.FieldName = "Cost";
-            this.colCost.Name = "colCost";
-            this.colCost.Visible = true;
-            this.colCost.VisibleIndex = 3;
-            // 
-            // colPrice
-            // 
-            this.colPrice.Caption = "Price";
-            this.colPrice.FieldName = "Price";
-            this.colPrice.Name = "colPrice";
-            this.colPrice.Visible = true;
-            this.colPrice.VisibleIndex = 4;
             // 
             // ProductForm
             // 
