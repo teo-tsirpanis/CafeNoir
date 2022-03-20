@@ -103,6 +103,7 @@
             this.colDescription});
             this.grvProductCategoryID.GridControl = this.grdProductCategoryID;
             this.grvProductCategoryID.Name = "grvProductCategoryID";
+            this.grvProductCategoryID.OptionsBehavior.Editable = false;
             // 
             // colID
             // 
@@ -288,6 +289,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.layoutControl1);
             this.Name = "ProductDF";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ProductDF";
             this.Load += new System.EventHandler(this.ProductDF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsProduct)).EndInit();
