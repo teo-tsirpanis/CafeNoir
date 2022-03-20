@@ -45,7 +45,7 @@ namespace CafeNoir.Core
         public List<Customer> Customers => _dto.Customers;
         public List<Product> Products => _dto.Products;
         public List<ProductCategory> ProductCats => _dto.ProductCats;
-        public ICollection<Employee> Employess { get; }
+        public ICollection<Employee> Employees { get; }
         public List<Transaction> Transactions => _dto.Transactions;
 
         public Customer RetailCustomer { get; }
@@ -86,7 +86,7 @@ namespace CafeNoir.Core
 
             _dto = dto ?? new();
 
-            Employess = new EmployeeCollection(_dto.Employees, _limits);
+            Employees = new EmployeeCollection(_dto.Employees, _limits);
             RetailCustomer = GetOrCreateRetailCustomer();
         }
 

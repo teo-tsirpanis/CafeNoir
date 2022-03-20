@@ -17,7 +17,7 @@ namespace CafeNoir
             bsCoffeeShop.DataSource = _coffeeShop;
 
             bsEmployees.DataSource = bsCoffeeShop;
-            bsEmployees.DataMember = nameof(_coffeeShop.Employess);
+            bsEmployees.DataMember = nameof(_coffeeShop.Employees);
             gridControlEmployees.DataSource = bsEmployees;
         }
 
@@ -41,7 +41,7 @@ namespace CafeNoir
             var employee = new Employee() { EmployeeType = employeeType };
             try
             {
-                _coffeeShop.Employess.Add(employee);
+                _coffeeShop.Employees.Add(employee);
             }
             catch (InvalidOperationException ex)
             {

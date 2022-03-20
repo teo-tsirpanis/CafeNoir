@@ -61,10 +61,10 @@ public partial class CoffeeShopForm : Form
 
     private void coffeeShopStatusToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        MessageBox.Show(this, $"Managers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Manager)}, " +
-            $"Cashiers: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Cashier)}, " +
-            $"Baristas: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Barista)}, " +
-            $"Waiters: {_coffeeshop.Employess.Count(x => x.EmployeeType == EmployeeType.Waiter)}, " +
+        MessageBox.Show(this, $"Managers: {_coffeeshop.Employees.Count(x => x.EmployeeType == EmployeeType.Manager)}, " +
+            $"Cashiers: {_coffeeshop.Employees.Count(x => x.EmployeeType == EmployeeType.Cashier)}, " +
+            $"Baristas: {_coffeeshop.Employees.Count(x => x.EmployeeType == EmployeeType.Barista)}, " +
+            $"Waiters: {_coffeeshop.Employees.Count(x => x.EmployeeType == EmployeeType.Waiter)}, " +
             $"Product Categories: {_coffeeshop.ProductCats.Count} "+
             $"Products: {_coffeeshop.Products.Count} "+
             $"Customers: {_coffeeshop.Customers.Count}");
