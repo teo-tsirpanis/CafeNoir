@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CafeNoir.Core;
+﻿namespace CafeNoir.Core;
 
 public class Product {
     public Guid ID { get; set; } = Guid.NewGuid();
@@ -14,13 +8,20 @@ public class Product {
     public decimal Price { get; set; }
     public decimal Cost { get; set; }
 
-
     public Product() {
 
     }
 
     public Product ShallowCopy() {
         return (Product)MemberwiseClone();
+
+
+    public Product(Guid productCategoryID)
+    {
+        ProductCategoryID = productCategoryID;
+    }
+
+
     }
 
 }
