@@ -76,8 +76,10 @@ public partial class CoffeeShopForm : Form
 
     }
 
-    private void productListToolStripMenuItem_Click(object sender, EventArgs e) {
-        var productForm = new ProductForm(_coffeeshop);
-        productForm.ShowDialog();
+    private void listToolStripMenuItem2_Click(object sender, EventArgs e) {
+    
+            var productForm = new ProductForm(_coffeeshop);
+            productForm.ShowDialog();
+
     }
 }

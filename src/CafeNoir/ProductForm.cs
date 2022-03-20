@@ -47,20 +47,20 @@ public partial class ProductForm : Form
     #region Methods
     private void OpenDetailsPage()
     {
-        var productDetailsForm = new ProductDetailsForm1(CoffeeShop, null);
+        var productDetailsForm = new ProductDF(CoffeeShop, null);
         productDetailsForm.ShowDialog();
         grvProducts.RefreshData();
     }
     private void OpenDetailsPage(Product currentProduct) {
-        var productDetailsForm = new ProductDetailsForm1(CoffeeShop, currentProduct);
+        var productDetailsForm = new ProductDF(CoffeeShop, currentProduct);
         productDetailsForm.ShowDialog();
         grvProducts.RefreshData();
     }
     private void SetUpBindings()
     {
         bsCoffeeShop.DataSource = CoffeeShop;
-        bsProduct.DataSource = bsCoffeeShop;
-        bsProduct.DataMember = nameof(CoffeeShop.Products);
+        bsProduct.DataSource = CoffeeShop.Products;
+        //bsProduct.DataMember = nameof(CoffeeShop.Products);
         grdProducts.DataSource = bsProduct;
 
      }

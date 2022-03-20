@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.grdProducts = new DevExpress.XtraGrid.GridControl();
+            this.grvProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductCategoryID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
@@ -40,29 +45,24 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bsProduct = new System.Windows.Forms.BindingSource(this.components);
             this.bsCoffeeShop = new System.Windows.Forms.BindingSource(this.components);
-            this.grdProducts = new DevExpress.XtraGrid.GridControl();
-            this.grvProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProductCategoryID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCost = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCoffeeShop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -81,6 +81,51 @@
             this.layoutControl1.Size = new System.Drawing.Size(820, 437);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // grdProducts
+            // 
+            this.grdProducts.Location = new System.Drawing.Point(12, 12);
+            this.grdProducts.MainView = this.grvProducts;
+            this.grdProducts.Name = "grdProducts";
+            this.grdProducts.Size = new System.Drawing.Size(796, 387);
+            this.grdProducts.TabIndex = 7;
+            this.grdProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvProducts});
+            // 
+            // grvProducts
+            // 
+            this.grvProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCode,
+            this.colDescription,
+            this.colProductCategoryID,
+            this.colCost,
+            this.colPrice});
+            this.grvProducts.GridControl = this.grdProducts;
+            this.grvProducts.Name = "grvProducts";
+            // 
+            // colCode
+            // 
+            this.colCode.Caption = "Code";
+            this.colCode.FieldName = "Code";
+            this.colCode.Name = "colCode";
+            this.colCode.Visible = true;
+            this.colCode.VisibleIndex = 0;
+            // 
+            // colDescription
+            // 
+            this.colDescription.Caption = "Description";
+            this.colDescription.FieldName = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.Visible = true;
+            this.colDescription.VisibleIndex = 1;
+            // 
+            // colProductCategoryID
+            // 
+            this.colProductCategoryID.Caption = "Product Category ID";
+            this.colProductCategoryID.FieldName = "ProductCategoryID";
+            this.colProductCategoryID.Name = "colProductCategoryID";
+            this.colProductCategoryID.Visible = true;
+            this.colProductCategoryID.VisibleIndex = 2;
             // 
             // btnClose
             // 
@@ -185,27 +230,6 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // grdProducts
-            // 
-            this.grdProducts.Location = new System.Drawing.Point(12, 12);
-            this.grdProducts.MainView = this.grvProducts;
-            this.grdProducts.Name = "grdProducts";
-            this.grdProducts.Size = new System.Drawing.Size(796, 387);
-            this.grdProducts.TabIndex = 7;
-            this.grdProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grvProducts});
-            // 
-            // grvProducts
-            // 
-            this.grvProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCode,
-            this.colDescription,
-            this.colProductCategoryID,
-            this.colCost,
-            this.colPrice});
-            this.grvProducts.GridControl = this.grdProducts;
-            this.grvProducts.Name = "grvProducts";
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.grdProducts;
@@ -214,30 +238,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(800, 391);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // colCode
-            // 
-            this.colCode.Caption = "Code";
-            this.colCode.FieldName = "Code";
-            this.colCode.Name = "colCode";
-            this.colCode.Visible = true;
-            this.colCode.VisibleIndex = 0;
-            // 
-            // colDescription
-            // 
-            this.colDescription.Caption = "Description";
-            this.colDescription.FieldName = "Description";
-            this.colDescription.Name = "colDescription";
-            this.colDescription.Visible = true;
-            this.colDescription.VisibleIndex = 1;
-            // 
-            // colProductCategoryID
-            // 
-            this.colProductCategoryID.Caption = "Product Category ID";
-            this.colProductCategoryID.FieldName = "ProductCategoryID";
-            this.colProductCategoryID.Name = "colProductCategoryID";
-            this.colProductCategoryID.Visible = true;
-            this.colProductCategoryID.VisibleIndex = 2;
             // 
             // colCost
             // 
@@ -268,17 +268,17 @@
             this.Load += new System.EventHandler(this.ProductForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCoffeeShop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
