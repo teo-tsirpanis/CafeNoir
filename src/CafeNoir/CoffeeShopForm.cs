@@ -84,8 +84,21 @@ public partial class CoffeeShopForm : Form
     }
 
     private void listToolStripMenuItem1_Click_1(object sender, EventArgs e) {
+        var emp = new Employee()
+        {
+            Name = "Giannis",
+            Surname = "Pol",
+            EmployeeType = EmployeeType.Cashier
+        };
+        _coffeeshop.Employess.Add(emp);
+
         var transactionForm = new TransactionForm(_coffeeshop);
         transactionForm.ShowDialog();
 
+    }
+
+    private void monthlyLedgerToolStripMenuItem_Click(object sender, EventArgs e) {
+        var ledger = new MonthlyLedgerForm(_coffeeshop);
+        ledger.ShowDialog();
     }
 }
