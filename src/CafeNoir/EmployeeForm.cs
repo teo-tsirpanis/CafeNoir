@@ -23,15 +23,7 @@ namespace CafeNoir
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            //if (CoffeeShop.Customers.Count >= 1)
-            //{
-            //    MessageBox.Show(this, "There is an active customer!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
 
-            //var cdf = new CustomerDetailsForm(CoffeeShop, null);
-            //cdf.ShowDialog();
-            //gridView1.RefreshData();
         }
 
         private void addEmployeeDropDown_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -48,9 +40,11 @@ namespace CafeNoir
                 MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var edf = new EmployeeDetailsForm(_coffeeShop, employee);
+            
+            var edf = new EmployeeDetailsForm(_coffeeShop, employee, false);
             edf.ShowDialog();
             gridView1.RefreshData();
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -74,7 +68,7 @@ namespace CafeNoir
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            var cdf = new EmployeeDetailsForm(_coffeeShop, (Employee)bsEmployees.Current);
+            var cdf = new EmployeeDetailsForm(_coffeeShop, (Employee)bsEmployees.Current, true);
             cdf.ShowDialog();
             gridView1.RefreshData();
         }
@@ -89,5 +83,7 @@ namespace CafeNoir
             _coffeeShop.SaveChanges();
             DialogResult = DialogResult.OK;
         }
+
+
     }
 }
