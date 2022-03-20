@@ -6,11 +6,13 @@ public partial class EmployeeDetailsForm : Form
 {
     private readonly CoffeeShop _coffeeShop;
     private readonly Employee _employee;
+    private readonly Employee _originalEmployee;
 
     public EmployeeDetailsForm(CoffeeShop coffeeShop, Employee employee)
     {
         _coffeeShop = coffeeShop;
         _employee = employee;
+        _originalEmployee = employee.ShallowCopy();
 
         InitializeComponent();
     }
@@ -28,5 +30,14 @@ public partial class EmployeeDetailsForm : Form
     {
         _coffeeShop.SaveChanges();
         DialogResult = DialogResult.OK;
+    }
+
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        _employee.Name = _originalEmployee.Name;
+        _employee.Surname = _originalEmployee.Surname;
+        _employee.SalaryPerMonth = _originalEmployee.SalaryPerMonth;
+
+        DialogResult = DialogResult.Cancel;
     }
 }
