@@ -15,6 +15,7 @@ namespace CafeNoir
             if (customer == null)
             {
                 customer = new Customer($"{CoffeeShop.Customers.Count:D3}");
+                Customer = customer;
                 CoffeeShop.Customers.Add(customer);
             }
             else {

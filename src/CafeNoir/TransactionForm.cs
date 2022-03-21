@@ -23,8 +23,8 @@ namespace CafeNoir {
                 MessageBox.Show("We need an employee");
                 return;
             }
-            if (employee.EmployeeType != EmployeeType.Cashier) {
-                MessageBox.Show("You have to pick a cashier!");
+            if (employee.EmployeeType != EmployeeType.Cashier && employee.EmployeeType != EmployeeType.Manager) {
+                MessageBox.Show("Only a manager or a cashier can create a new transaction!");
                 return;
             }
             if (CoffeeShop.Customers.Count < 1) {
