@@ -74,20 +74,21 @@
             this.layoutControl1.Controls.Add(this.btnEdit);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(-812, 196, 812, 500);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(820, 437);
+            this.layoutControl1.Size = new System.Drawing.Size(937, 583);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // grdProducts
             // 
-            this.grdProducts.Location = new System.Drawing.Point(12, 12);
+            this.grdProducts.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grdProducts.Location = new System.Drawing.Point(13, 16);
             this.grdProducts.MainView = this.grvProducts;
+            this.grdProducts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grdProducts.Name = "grdProducts";
-            this.grdProducts.Size = new System.Drawing.Size(796, 387);
+            this.grdProducts.Size = new System.Drawing.Size(911, 518);
             this.grdProducts.TabIndex = 7;
             this.grdProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvProducts});
@@ -100,6 +101,7 @@
             this.colProductCategoryID,
             this.colCost,
             this.colPrice});
+            this.grvProducts.DetailHeight = 467;
             this.grvProducts.GridControl = this.grdProducts;
             this.grvProducts.Name = "grvProducts";
             this.grvProducts.OptionsBehavior.Editable = false;
@@ -109,48 +111,57 @@
             // 
             this.colCode.Caption = "Code";
             this.colCode.FieldName = "Code";
+            this.colCode.MinWidth = 23;
             this.colCode.Name = "colCode";
             this.colCode.Visible = true;
             this.colCode.VisibleIndex = 0;
+            this.colCode.Width = 86;
             // 
             // colDescription
             // 
             this.colDescription.Caption = "Description";
             this.colDescription.FieldName = "Description";
+            this.colDescription.MinWidth = 23;
             this.colDescription.Name = "colDescription";
             this.colDescription.Visible = true;
             this.colDescription.VisibleIndex = 1;
+            this.colDescription.Width = 86;
             // 
             // colProductCategoryID
             // 
             this.colProductCategoryID.Caption = "Product Category ID";
             this.colProductCategoryID.FieldName = "ProductCategoryID";
+            this.colProductCategoryID.MinWidth = 23;
             this.colProductCategoryID.Name = "colProductCategoryID";
             this.colProductCategoryID.Visible = true;
             this.colProductCategoryID.VisibleIndex = 2;
+            this.colProductCategoryID.Width = 86;
             // 
             // colCost
             // 
             this.colCost.Caption = "Cost";
             this.colCost.FieldName = "Cost";
+            this.colCost.MinWidth = 23;
             this.colCost.Name = "colCost";
             this.colCost.Visible = true;
             this.colCost.VisibleIndex = 3;
+            this.colCost.Width = 86;
             // 
             // colPrice
             // 
             this.colPrice.Caption = "Price";
             this.colPrice.FieldName = "Price";
+            this.colPrice.MinWidth = 23;
             this.colPrice.Name = "colPrice";
             this.colPrice.Visible = true;
             this.colPrice.VisibleIndex = 4;
+            this.colPrice.Width = 86;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(718, 403);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose.Location = new System.Drawing.Point(820, 540);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(90, 22);
+            this.btnClose.Size = new System.Drawing.Size(104, 27);
             this.btnClose.StyleController = this.layoutControl1;
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Close";
@@ -158,10 +169,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(626, 403);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Location = new System.Drawing.Point(715, 540);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(88, 22);
+            this.btnDelete.Size = new System.Drawing.Size(101, 27);
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
@@ -169,10 +179,9 @@
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(532, 403);
-            this.btnNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNew.Location = new System.Drawing.Point(607, 540);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(90, 22);
+            this.btnNew.Size = new System.Drawing.Size(104, 27);
             this.btnNew.StyleController = this.layoutControl1;
             this.btnNew.TabIndex = 4;
             this.btnNew.Text = "New";
@@ -180,10 +189,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(439, 403);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Location = new System.Drawing.Point(501, 540);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(89, 22);
+            this.btnEdit.Size = new System.Drawing.Size(102, 27);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
@@ -201,50 +209,50 @@
             this.layoutControlItem5,
             this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(820, 437);
+            this.Root.Size = new System.Drawing.Size(937, 583);
             this.Root.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 391);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 524);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(427, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(488, 33);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnEdit;
-            this.layoutControlItem2.Location = new System.Drawing.Point(427, 391);
+            this.layoutControlItem2.Location = new System.Drawing.Point(488, 524);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(93, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(106, 33);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnNew;
-            this.layoutControlItem3.Location = new System.Drawing.Point(520, 391);
+            this.layoutControlItem3.Location = new System.Drawing.Point(594, 524);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(94, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(108, 33);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnDelete;
-            this.layoutControlItem4.Location = new System.Drawing.Point(614, 391);
+            this.layoutControlItem4.Location = new System.Drawing.Point(702, 524);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(92, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(105, 33);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnClose;
-            this.layoutControlItem5.Location = new System.Drawing.Point(706, 391);
+            this.layoutControlItem5.Location = new System.Drawing.Point(807, 524);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(94, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(108, 33);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -253,20 +261,19 @@
             this.layoutControlItem1.Control = this.grdProducts;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(800, 391);
+            this.layoutControlItem1.Size = new System.Drawing.Size(915, 524);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // ProductForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 437);
+            this.ClientSize = new System.Drawing.Size(937, 583);
             this.Controls.Add(this.layoutControl1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ProductForm";
+            this.Text = "Products";
             this.Load += new System.EventHandler(this.ProductForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

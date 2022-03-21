@@ -61,13 +61,13 @@ public partial class CoffeeShopForm : Form
 
     private void coffeeShopStatusToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        MessageBox.Show(this, $"Managers: {_coffeeshop.Employees.Count(x => x.EmployeeType == EmployeeType.Manager)}, " +
-            $"Cashiers: {_coffeeshop.Employees.Count(x => x.EmployeeType == EmployeeType.Cashier)}, " +
-            $"Baristas: {_coffeeshop.Employees.Count(x => x.EmployeeType == EmployeeType.Barista)}, " +
-            $"Waiters: {_coffeeshop.Employees.Count(x => x.EmployeeType == EmployeeType.Waiter)}, " +
-            $"Product Categories: {_coffeeshop.ProductCats.Count} "+
-            $"Products: {_coffeeshop.Products.Count} "+
-            $"Customers: {_coffeeshop.Customers.Count}");
+        MessageBox.Show(this, $"Managers: {_coffeeshop.Employees.Count(x => x.EmployeeType == EmployeeType.Manager)} \n" +
+            $"Cashiers: {_coffeeshop.Employees.Count(x => x.EmployeeType == EmployeeType.Cashier)} \n" +
+            $"Baristas: {_coffeeshop.Employees.Count(x => x.EmployeeType == EmployeeType.Barista)} \n" +
+            $"Waiters: {_coffeeshop.Employees.Count(x => x.EmployeeType == EmployeeType.Waiter)} \n" +
+            $"Product Categories: {_coffeeshop.ProductCats.Count} \n" +
+            $"Products: {_coffeeshop.Products.Count} \n" +
+            $"Customers: {_coffeeshop.Customers.Count} \n");
     }
 
     private void listEmployeesToolStripMenuItem_Click(object sender, EventArgs e)
