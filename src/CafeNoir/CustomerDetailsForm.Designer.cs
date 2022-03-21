@@ -57,17 +57,19 @@
             this.layoutControl1.Controls.Add(this.textEditCode);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(800, 450);
+            this.layoutControl1.Size = new System.Drawing.Size(914, 600);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(12, 390);
+            this.btnSave.Location = new System.Drawing.Point(13, 524);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(776, 22);
+            this.btnSave.Size = new System.Drawing.Size(888, 27);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
@@ -75,9 +77,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(12, 416);
+            this.btnClose.Location = new System.Drawing.Point(13, 557);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(776, 22);
+            this.btnClose.Size = new System.Drawing.Size(888, 27);
             this.btnClose.StyleController = this.layoutControl1;
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Close";
@@ -85,17 +88,19 @@
             // 
             // textEditDescription
             // 
-            this.textEditDescription.Location = new System.Drawing.Point(77, 36);
+            this.textEditDescription.Location = new System.Drawing.Point(90, 44);
+            this.textEditDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEditDescription.Name = "textEditDescription";
-            this.textEditDescription.Size = new System.Drawing.Size(711, 20);
+            this.textEditDescription.Size = new System.Drawing.Size(811, 22);
             this.textEditDescription.StyleController = this.layoutControl1;
             this.textEditDescription.TabIndex = 5;
             // 
             // textEditCode
             // 
-            this.textEditCode.Location = new System.Drawing.Point(77, 12);
+            this.textEditCode.Location = new System.Drawing.Point(90, 16);
+            this.textEditCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEditCode.Name = "textEditCode";
-            this.textEditCode.Size = new System.Drawing.Size(711, 20);
+            this.textEditCode.Size = new System.Drawing.Size(811, 22);
             this.textEditCode.StyleController = this.layoutControl1;
             this.textEditCode.TabIndex = 4;
             // 
@@ -110,7 +115,7 @@
             this.layoutControlItem3,
             this.layoutControlItem4});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(800, 450);
+            this.Root.Size = new System.Drawing.Size(914, 600);
             this.Root.TextVisible = false;
             // 
             // labelCode
@@ -118,54 +123,55 @@
             this.labelCode.Control = this.textEditCode;
             this.labelCode.Location = new System.Drawing.Point(0, 0);
             this.labelCode.Name = "labelCode";
-            this.labelCode.Size = new System.Drawing.Size(780, 24);
+            this.labelCode.Size = new System.Drawing.Size(892, 28);
             this.labelCode.Text = "Code";
-            this.labelCode.TextSize = new System.Drawing.Size(53, 13);
+            this.labelCode.TextSize = new System.Drawing.Size(63, 16);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 48);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 56);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(780, 330);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(892, 452);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // labelDescription
             // 
             this.labelDescription.Control = this.textEditDescription;
-            this.labelDescription.Location = new System.Drawing.Point(0, 24);
+            this.labelDescription.Location = new System.Drawing.Point(0, 28);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(780, 24);
+            this.labelDescription.Size = new System.Drawing.Size(892, 28);
             this.labelDescription.Text = "Description";
-            this.labelDescription.TextSize = new System.Drawing.Size(53, 13);
+            this.labelDescription.TextSize = new System.Drawing.Size(63, 16);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnClose;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 404);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 541);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(780, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(892, 33);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnSave;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 378);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 508);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(780, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(892, 33);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // CustomerDetailsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 600);
             this.Controls.Add(this.layoutControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CustomerDetailsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "CustomerDetailsForm";
+            this.Text = "Customer Details";
             this.Load += new System.EventHandler(this.CustomerDetailsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

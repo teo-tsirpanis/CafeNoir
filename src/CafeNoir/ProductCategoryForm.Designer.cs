@@ -69,17 +69,19 @@
             this.layoutControl1.Controls.Add(this.gridControlProductCategories);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(800, 450);
+            this.layoutControl1.Size = new System.Drawing.Size(914, 600);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(326, 416);
+            this.btnEdit.Location = new System.Drawing.Point(372, 557);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(106, 22);
+            this.btnEdit.Size = new System.Drawing.Size(122, 27);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edit";
@@ -87,9 +89,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(551, 416);
+            this.btnDelete.Location = new System.Drawing.Point(629, 557);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(123, 22);
+            this.btnDelete.Size = new System.Drawing.Size(141, 27);
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
@@ -97,9 +100,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(678, 416);
+            this.btnClose.Location = new System.Drawing.Point(774, 557);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(110, 22);
+            this.btnClose.Size = new System.Drawing.Size(127, 27);
             this.btnClose.StyleController = this.layoutControl1;
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close";
@@ -107,9 +111,10 @@
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(436, 416);
+            this.btnNew.Location = new System.Drawing.Point(498, 557);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(111, 22);
+            this.btnNew.Size = new System.Drawing.Size(127, 27);
             this.btnNew.StyleController = this.layoutControl1;
             this.btnNew.TabIndex = 2;
             this.btnNew.Text = "New";
@@ -117,12 +122,14 @@
             // 
             // gridControlProductCategories
             // 
-            this.gridControlProductCategories.Location = new System.Drawing.Point(12, 12);
+            this.gridControlProductCategories.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridControlProductCategories.Location = new System.Drawing.Point(13, 16);
             this.gridControlProductCategories.MainView = this.grdProductCategories;
+            this.gridControlProductCategories.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControlProductCategories.Name = "gridControlProductCategories";
             this.gridControlProductCategories.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repType});
-            this.gridControlProductCategories.Size = new System.Drawing.Size(776, 400);
+            this.gridControlProductCategories.Size = new System.Drawing.Size(888, 535);
             this.gridControlProductCategories.TabIndex = 0;
             this.gridControlProductCategories.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdProductCategories});
@@ -133,6 +140,7 @@
             this.colCode,
             this.colDescription,
             this.colType});
+            this.grdProductCategories.DetailHeight = 467;
             this.grdProductCategories.GridControl = this.gridControlProductCategories;
             this.grdProductCategories.Name = "grdProductCategories";
             this.grdProductCategories.OptionsBehavior.Editable = false;
@@ -142,28 +150,32 @@
             // 
             this.colCode.Caption = "Code";
             this.colCode.FieldName = "Code";
+            this.colCode.MinWidth = 23;
             this.colCode.Name = "colCode";
             this.colCode.Visible = true;
             this.colCode.VisibleIndex = 0;
-            this.colCode.Width = 250;
+            this.colCode.Width = 286;
             // 
             // colDescription
             // 
             this.colDescription.Caption = "Description";
             this.colDescription.FieldName = "Description";
+            this.colDescription.MinWidth = 23;
             this.colDescription.Name = "colDescription";
             this.colDescription.Visible = true;
             this.colDescription.VisibleIndex = 1;
-            this.colDescription.Width = 250;
+            this.colDescription.Width = 286;
             // 
             // colType
             // 
             this.colType.Caption = "Type";
             this.colType.ColumnEdit = this.repType;
             this.colType.FieldName = "ProductType";
+            this.colType.MinWidth = 23;
             this.colType.Name = "colType";
             this.colType.Visible = true;
             this.colType.VisibleIndex = 2;
+            this.colType.Width = 86;
             // 
             // repType
             // 
@@ -184,7 +196,7 @@
             this.emptySpaceItem1,
             this.layoutControlItem5});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(800, 450);
+            this.Root.Size = new System.Drawing.Size(914, 600);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -192,63 +204,64 @@
             this.layoutControlItem1.Control = this.gridControlProductCategories;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(780, 404);
+            this.layoutControlItem1.Size = new System.Drawing.Size(892, 541);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnNew;
-            this.layoutControlItem2.Location = new System.Drawing.Point(424, 404);
+            this.layoutControlItem2.Location = new System.Drawing.Point(485, 541);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(115, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(131, 33);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnClose;
-            this.layoutControlItem3.Location = new System.Drawing.Point(666, 404);
+            this.layoutControlItem3.Location = new System.Drawing.Point(761, 541);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(114, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(131, 33);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnDelete;
-            this.layoutControlItem4.Location = new System.Drawing.Point(539, 404);
+            this.layoutControlItem4.Location = new System.Drawing.Point(616, 541);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(127, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(145, 33);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 404);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 541);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(314, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(359, 33);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnEdit;
-            this.layoutControlItem5.Location = new System.Drawing.Point(314, 404);
+            this.layoutControlItem5.Location = new System.Drawing.Point(359, 541);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(110, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(126, 33);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // ProductCategoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 600);
             this.Controls.Add(this.layoutControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductCategoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ProductCategoryForm";
+            this.Text = "Product Categories";
             this.Load += new System.EventHandler(this.ProductCategoryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

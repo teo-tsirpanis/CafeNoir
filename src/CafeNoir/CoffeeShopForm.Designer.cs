@@ -64,7 +64,8 @@ partial class CoffeeShopForm
             this.monthlyLedgerToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(900, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1029, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -75,28 +76,28 @@ partial class CoffeeShopForm
             this.saveToolStripMenuItem,
             this.coffeeShopStatusToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // reloadToolStripMenuItem
             // 
             this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
-            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.reloadToolStripMenuItem.Text = "Reload";
             this.reloadToolStripMenuItem.Click += new System.EventHandler(this.reloadToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // coffeeShopStatusToolStripMenuItem
             // 
             this.coffeeShopStatusToolStripMenuItem.Name = "coffeeShopStatusToolStripMenuItem";
-            this.coffeeShopStatusToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.coffeeShopStatusToolStripMenuItem.Text = "CoffeeShop Status";
+            this.coffeeShopStatusToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.coffeeShopStatusToolStripMenuItem.Text = "Coffee-Shop Status";
             this.coffeeShopStatusToolStripMenuItem.Click += new System.EventHandler(this.coffeeShopStatusToolStripMenuItem_Click);
             // 
             // customersToolStripMenuItem
@@ -104,13 +105,13 @@ partial class CoffeeShopForm
             this.customersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listToolStripMenuItem});
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
             this.customersToolStripMenuItem.Text = "Customers";
             // 
             // listToolStripMenuItem
             // 
             this.listToolStripMenuItem.Name = "listToolStripMenuItem";
-            this.listToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.listToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.listToolStripMenuItem.Text = "List";
             this.listToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem_Click);
             // 
@@ -119,13 +120,13 @@ partial class CoffeeShopForm
             this.productToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listToolStripMenuProduct});
             this.productToolStripMenuItem.Name = "productToolStripMenuItem";
-            this.productToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.productToolStripMenuItem.Text = "Product";
+            this.productToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.productToolStripMenuItem.Text = "Products";
             // 
             // listToolStripMenuProduct
             // 
             this.listToolStripMenuProduct.Name = "listToolStripMenuProduct";
-            this.listToolStripMenuProduct.Size = new System.Drawing.Size(92, 22);
+            this.listToolStripMenuProduct.Size = new System.Drawing.Size(224, 26);
             this.listToolStripMenuProduct.Text = "List";
             this.listToolStripMenuProduct.Click += new System.EventHandler(this.listToolStripMenuItem2_Click);
             // 
@@ -134,13 +135,13 @@ partial class CoffeeShopForm
             this.productCategoriesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.productCategoryListToolStripMenuItem});
             this.productCategoriesToolStripMenuItem.Name = "productCategoriesToolStripMenuItem";
-            this.productCategoriesToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
+            this.productCategoriesToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
             this.productCategoriesToolStripMenuItem.Text = "Product Categories";
             // 
             // productCategoryListToolStripMenuItem
             // 
             this.productCategoryListToolStripMenuItem.Name = "productCategoryListToolStripMenuItem";
-            this.productCategoryListToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.productCategoryListToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.productCategoryListToolStripMenuItem.Text = "List";
             this.productCategoryListToolStripMenuItem.Click += new System.EventHandler(this.productCategoryListToolStripMenuItem_Click);
             // 
@@ -149,13 +150,13 @@ partial class CoffeeShopForm
             this.employeesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listToolStripMenuEmployees});
             this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
             this.employeesToolStripMenuItem.Text = "Employees";
             // 
             // listToolStripMenuEmployees
             // 
             this.listToolStripMenuEmployees.Name = "listToolStripMenuEmployees";
-            this.listToolStripMenuEmployees.Size = new System.Drawing.Size(92, 22);
+            this.listToolStripMenuEmployees.Size = new System.Drawing.Size(114, 26);
             this.listToolStripMenuEmployees.Text = "List";
             this.listToolStripMenuEmployees.Click += new System.EventHandler(this.listEmployeesToolStripMenuItem_Click);
             // 
@@ -164,20 +165,20 @@ partial class CoffeeShopForm
             this.transactionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listToolStripMenuTransaction});
             this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
-            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.transactionToolStripMenuItem.Text = "Transaction";
             // 
             // listToolStripMenuTransaction
             // 
             this.listToolStripMenuTransaction.Name = "listToolStripMenuTransaction";
-            this.listToolStripMenuTransaction.Size = new System.Drawing.Size(92, 22);
+            this.listToolStripMenuTransaction.Size = new System.Drawing.Size(114, 26);
             this.listToolStripMenuTransaction.Text = "List";
             this.listToolStripMenuTransaction.Click += new System.EventHandler(this.listToolStripMenuItem1_Click_1);
             // 
             // monthlyLedgerToolStripMenuItem
             // 
             this.monthlyLedgerToolStripMenuItem.Name = "monthlyLedgerToolStripMenuItem";
-            this.monthlyLedgerToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.monthlyLedgerToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
             this.monthlyLedgerToolStripMenuItem.Text = "Monthly Ledger";
             this.monthlyLedgerToolStripMenuItem.Click += new System.EventHandler(this.monthlyLedgerToolStripMenuItem_Click);
             // 
@@ -197,12 +198,13 @@ partial class CoffeeShopForm
             // 
             // CoffeeShopForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CafeNoir.Properties.Resources.i1;
-            this.ClientSize = new System.Drawing.Size(900, 600);
+            this.ClientSize = new System.Drawing.Size(1029, 800);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CoffeeShopForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Coffee-Shop";

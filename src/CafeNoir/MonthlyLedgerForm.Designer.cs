@@ -90,18 +90,20 @@
             this.layoutControl1.Controls.Add(this.spinEditYear);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1075, 189, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(800, 450);
+            this.layoutControl1.Size = new System.Drawing.Size(914, 600);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(652, 416);
+            this.btnClose.Location = new System.Drawing.Point(745, 557);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(136, 22);
+            this.btnClose.Size = new System.Drawing.Size(156, 27);
             this.btnClose.StyleController = this.layoutControl1;
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Close";
@@ -109,56 +111,59 @@
             // 
             // labelTotal
             // 
-            this.labelTotal.Location = new System.Drawing.Point(12, 378);
+            this.labelTotal.Location = new System.Drawing.Point(13, 503);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(776, 34);
+            this.labelTotal.Size = new System.Drawing.Size(888, 48);
             this.labelTotal.TabIndex = 1;
             this.labelTotal.Text = "Total";
             // 
             // lookUpEditMonths
             // 
             this.lookUpEditMonths.EditValue = 1;
-            this.lookUpEditMonths.Location = new System.Drawing.Point(47, 12);
+            this.lookUpEditMonths.Location = new System.Drawing.Point(53, 16);
+            this.lookUpEditMonths.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lookUpEditMonths.Name = "lookUpEditMonths";
             this.lookUpEditMonths.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.lookUpEditMonths.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEditMonths.Properties.NullText = "";
-            this.lookUpEditMonths.Size = new System.Drawing.Size(166, 20);
+            this.lookUpEditMonths.Size = new System.Drawing.Size(190, 22);
             this.lookUpEditMonths.StyleController = this.layoutControl1;
             this.lookUpEditMonths.TabIndex = 0;
             this.lookUpEditMonths.EditValueChanged += new System.EventHandler(this.lookUpEditMonths_EditValueChanged);
             // 
             // labelFixedExpenses
             // 
-            this.labelFixedExpenses.Location = new System.Drawing.Point(12, 354);
+            this.labelFixedExpenses.Location = new System.Drawing.Point(13, 471);
             this.labelFixedExpenses.Name = "labelFixedExpenses";
-            this.labelFixedExpenses.Size = new System.Drawing.Size(776, 20);
+            this.labelFixedExpenses.Size = new System.Drawing.Size(888, 26);
             this.labelFixedExpenses.TabIndex = 1;
             this.labelFixedExpenses.Text = "Fixed expenses";
             // 
             // labelExpenses
             // 
-            this.labelExpenses.Location = new System.Drawing.Point(12, 330);
+            this.labelExpenses.Location = new System.Drawing.Point(13, 438);
             this.labelExpenses.Name = "labelExpenses";
-            this.labelExpenses.Size = new System.Drawing.Size(776, 20);
+            this.labelExpenses.Size = new System.Drawing.Size(888, 27);
             this.labelExpenses.TabIndex = 1;
             this.labelExpenses.Text = "Expenses";
             // 
             // labelIncome
             // 
-            this.labelIncome.Location = new System.Drawing.Point(12, 306);
+            this.labelIncome.Location = new System.Drawing.Point(13, 406);
             this.labelIncome.Name = "labelIncome";
-            this.labelIncome.Size = new System.Drawing.Size(776, 20);
+            this.labelIncome.Size = new System.Drawing.Size(888, 26);
             this.labelIncome.TabIndex = 1;
             this.labelIncome.Text = "Income";
             // 
             // grdTransactions
             // 
-            this.grdTransactions.Location = new System.Drawing.Point(12, 60);
+            this.grdTransactions.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grdTransactions.Location = new System.Drawing.Point(13, 74);
             this.grdTransactions.MainView = this.grvTransactions;
+            this.grdTransactions.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grdTransactions.Name = "grdTransactions";
-            this.grdTransactions.Size = new System.Drawing.Size(776, 242);
+            this.grdTransactions.Size = new System.Drawing.Size(888, 326);
             this.grdTransactions.TabIndex = 4;
             this.grdTransactions.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvTransactions});
@@ -170,6 +175,7 @@
             this.colEmployeeID,
             this.colTotalPrice,
             this.colTotalCost});
+            this.grvTransactions.DetailHeight = 467;
             this.grvTransactions.GridControl = this.grdTransactions;
             this.grvTransactions.Name = "grvTransactions";
             this.grvTransactions.OptionsBehavior.Editable = false;
@@ -179,33 +185,41 @@
             // 
             this.colDate.Caption = "Date";
             this.colDate.FieldName = "Date";
+            this.colDate.MinWidth = 23;
             this.colDate.Name = "colDate";
             this.colDate.Visible = true;
             this.colDate.VisibleIndex = 0;
+            this.colDate.Width = 86;
             // 
             // colEmployeeID
             // 
             this.colEmployeeID.Caption = "EmployeeID";
             this.colEmployeeID.FieldName = "EmployeeID";
+            this.colEmployeeID.MinWidth = 23;
             this.colEmployeeID.Name = "colEmployeeID";
             this.colEmployeeID.Visible = true;
             this.colEmployeeID.VisibleIndex = 1;
+            this.colEmployeeID.Width = 86;
             // 
             // colTotalPrice
             // 
             this.colTotalPrice.Caption = "Total Price";
             this.colTotalPrice.FieldName = "TotalPrice";
+            this.colTotalPrice.MinWidth = 23;
             this.colTotalPrice.Name = "colTotalPrice";
             this.colTotalPrice.Visible = true;
             this.colTotalPrice.VisibleIndex = 2;
+            this.colTotalPrice.Width = 86;
             // 
             // colTotalCost
             // 
             this.colTotalCost.Caption = "Total Cost";
             this.colTotalCost.FieldName = "TotalCost";
+            this.colTotalCost.MinWidth = 23;
             this.colTotalCost.Name = "colTotalCost";
             this.colTotalCost.Visible = true;
             this.colTotalCost.VisibleIndex = 3;
+            this.colTotalCost.Width = 86;
             // 
             // spinEditYear
             // 
@@ -214,7 +228,8 @@
             0,
             0,
             0});
-            this.spinEditYear.Location = new System.Drawing.Point(46, 36);
+            this.spinEditYear.Location = new System.Drawing.Point(53, 44);
+            this.spinEditYear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.spinEditYear.Name = "spinEditYear";
             this.spinEditYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -231,7 +246,7 @@
             0,
             0});
             this.spinEditYear.Properties.NullText = "Year";
-            this.spinEditYear.Size = new System.Drawing.Size(167, 20);
+            this.spinEditYear.Size = new System.Drawing.Size(190, 24);
             this.spinEditYear.StyleController = this.layoutControl1;
             this.spinEditYear.TabIndex = 2;
             this.spinEditYear.EditValueChanged += new System.EventHandler(this.spinEditYear_EditValueChanged);
@@ -253,50 +268,50 @@
             this.layoutControlItem9,
             this.emptySpaceItem6});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(800, 450);
+            this.Root.Size = new System.Drawing.Size(914, 600);
             this.Root.TextVisible = false;
             // 
             // Year
             // 
             this.Year.Control = this.spinEditYear;
-            this.Year.Location = new System.Drawing.Point(0, 24);
+            this.Year.Location = new System.Drawing.Point(0, 28);
             this.Year.Name = "Year";
-            this.Year.Size = new System.Drawing.Size(205, 24);
-            this.Year.TextSize = new System.Drawing.Size(22, 13);
+            this.Year.Size = new System.Drawing.Size(234, 30);
+            this.Year.TextSize = new System.Drawing.Size(26, 16);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.grdTransactions;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 58);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(780, 246);
+            this.layoutControlItem1.Size = new System.Drawing.Size(892, 332);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.labelIncome;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 294);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 390);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(780, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(892, 32);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.labelExpenses;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 318);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 422);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(780, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(892, 33);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.labelFixedExpenses;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 342);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 455);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(780, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(892, 32);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -305,52 +320,52 @@
             this.layoutControlItem6.Control = this.lookUpEditMonths;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(205, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(234, 28);
             this.layoutControlItem6.Text = "Month";
             this.layoutControlItem6.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(30, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(35, 16);
             this.layoutControlItem6.TextToControlDistance = 5;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(205, 0);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(234, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(575, 24);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(658, 28);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(205, 24);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(234, 28);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(575, 24);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(658, 30);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.labelTotal;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 366);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 487);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(780, 38);
+            this.layoutControlItem7.Size = new System.Drawing.Size(892, 54);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnClose;
-            this.layoutControlItem9.Location = new System.Drawing.Point(640, 404);
+            this.layoutControlItem9.Location = new System.Drawing.Point(732, 541);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(140, 26);
+            this.layoutControlItem9.Size = new System.Drawing.Size(160, 33);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 404);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 541);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(640, 26);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(732, 33);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
@@ -379,13 +394,14 @@
             // 
             // MonthlyLedgerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 600);
             this.Controls.Add(this.layoutControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MonthlyLedgerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "MonthlyLedgerForm";
+            this.Text = "Monthly Ledger";
             this.Load += new System.EventHandler(this.MonthlyLedgerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
