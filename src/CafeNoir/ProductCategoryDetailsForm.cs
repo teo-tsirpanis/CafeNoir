@@ -10,8 +10,8 @@ public partial class ProductCategoryDetailsForm : Form
     public ProductCategoryDetailsForm(CoffeeShop coffeeShop, ProductCategory? productCategory = null)
     {
         _coffeeShop = coffeeShop;
-        _originalProductCategory = productCategory;
-        _changedProductCategory = productCategory?.ShallowCopy();
+        _originalProductCategory = productCategory?.ShallowCopy();
+        _changedProductCategory = productCategory;
         InitializeComponent();
         ControlExtensions.PopulateProductType(ctrlType.Properties);
     }
