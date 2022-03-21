@@ -9,6 +9,7 @@ public class Transaction {
     public PaymentMethod PaymentMethod { get; set; }
     public decimal TotalPrice { get; set; }
     public decimal TotalCost { get; set; }
+    public string EmployeeName { get; set; }
     public Transaction() {
         ID = Guid.NewGuid();
         TransactionLines = new List<TransactionLine>();
@@ -17,5 +18,8 @@ public class Transaction {
         ID = Guid.NewGuid();
         EmployeeID = employeeID;
         CustomerID = customerID;
+       
+
     }
+
 }

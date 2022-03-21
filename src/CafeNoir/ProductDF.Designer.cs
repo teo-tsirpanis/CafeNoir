@@ -28,7 +28,6 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.grdProductCategoryID = new DevExpress.XtraGrid.GridControl();
             this.grvProductCategoryID = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButtonClose = new DevExpress.XtraEditors.SimpleButton();
@@ -79,21 +78,18 @@
             this.layoutControl1.Controls.Add(this.textEditCode);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(914, 600);
+            this.layoutControl1.Size = new System.Drawing.Size(800, 450);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // grdProductCategoryID
             // 
-            this.grdProductCategoryID.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grdProductCategoryID.Location = new System.Drawing.Point(13, 128);
+            this.grdProductCategoryID.Location = new System.Drawing.Point(11, 96);
             this.grdProductCategoryID.MainView = this.grvProductCategoryID;
-            this.grdProductCategoryID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grdProductCategoryID.Name = "grdProductCategoryID";
-            this.grdProductCategoryID.Size = new System.Drawing.Size(888, 287);
+            this.grdProductCategoryID.Size = new System.Drawing.Size(778, 219);
             this.grdProductCategoryID.TabIndex = 10;
             this.grdProductCategoryID.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvProductCategoryID});
@@ -101,51 +97,34 @@
             // grvProductCategoryID
             // 
             this.grvProductCategoryID.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colID,
             this.colCode,
             this.colDescription});
-            this.grvProductCategoryID.DetailHeight = 467;
             this.grvProductCategoryID.GridControl = this.grdProductCategoryID;
             this.grvProductCategoryID.Name = "grvProductCategoryID";
             this.grvProductCategoryID.OptionsBehavior.Editable = false;
             this.grvProductCategoryID.OptionsView.ShowGroupPanel = false;
             // 
-            // colID
-            // 
-            this.colID.Caption = "ID";
-            this.colID.FieldName = "ID";
-            this.colID.MinWidth = 23;
-            this.colID.Name = "colID";
-            this.colID.Visible = true;
-            this.colID.VisibleIndex = 0;
-            this.colID.Width = 86;
-            // 
             // colCode
             // 
             this.colCode.Caption = "Code";
             this.colCode.FieldName = "Code";
-            this.colCode.MinWidth = 23;
             this.colCode.Name = "colCode";
             this.colCode.Visible = true;
-            this.colCode.VisibleIndex = 1;
-            this.colCode.Width = 86;
+            this.colCode.VisibleIndex = 0;
             // 
             // colDescription
             // 
             this.colDescription.Caption = "Description";
             this.colDescription.FieldName = "Description";
-            this.colDescription.MinWidth = 23;
             this.colDescription.Name = "colDescription";
             this.colDescription.Visible = true;
-            this.colDescription.VisibleIndex = 2;
-            this.colDescription.Width = 86;
+            this.colDescription.VisibleIndex = 1;
             // 
             // simpleButtonClose
             // 
-            this.simpleButtonClose.Location = new System.Drawing.Point(459, 557);
-            this.simpleButtonClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButtonClose.Location = new System.Drawing.Point(402, 420);
             this.simpleButtonClose.Name = "simpleButtonClose";
-            this.simpleButtonClose.Size = new System.Drawing.Size(442, 27);
+            this.simpleButtonClose.Size = new System.Drawing.Size(387, 22);
             this.simpleButtonClose.StyleController = this.layoutControl1;
             this.simpleButtonClose.TabIndex = 9;
             this.simpleButtonClose.Text = "Close";
@@ -153,10 +132,9 @@
             // 
             // simpleButtonSave
             // 
-            this.simpleButtonSave.Location = new System.Drawing.Point(13, 557);
-            this.simpleButtonSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButtonSave.Location = new System.Drawing.Point(11, 420);
             this.simpleButtonSave.Name = "simpleButtonSave";
-            this.simpleButtonSave.Size = new System.Drawing.Size(442, 27);
+            this.simpleButtonSave.Size = new System.Drawing.Size(387, 22);
             this.simpleButtonSave.StyleController = this.layoutControl1;
             this.simpleButtonSave.TabIndex = 8;
             this.simpleButtonSave.Text = "Save";
@@ -169,41 +147,37 @@
             0,
             0,
             65536});
-            this.calcEditPrice.Location = new System.Drawing.Point(90, 100);
-            this.calcEditPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.calcEditPrice.Location = new System.Drawing.Point(74, 74);
             this.calcEditPrice.Name = "calcEditPrice";
             this.calcEditPrice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calcEditPrice.Size = new System.Drawing.Size(811, 22);
+            this.calcEditPrice.Size = new System.Drawing.Size(715, 20);
             this.calcEditPrice.StyleController = this.layoutControl1;
             this.calcEditPrice.TabIndex = 7;
             // 
             // calcEditCost
             // 
-            this.calcEditCost.Location = new System.Drawing.Point(90, 72);
-            this.calcEditCost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.calcEditCost.Location = new System.Drawing.Point(74, 52);
             this.calcEditCost.Name = "calcEditCost";
             this.calcEditCost.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calcEditCost.Size = new System.Drawing.Size(811, 22);
+            this.calcEditCost.Size = new System.Drawing.Size(715, 20);
             this.calcEditCost.StyleController = this.layoutControl1;
             this.calcEditCost.TabIndex = 6;
             // 
             // textEditDescription
             // 
-            this.textEditDescription.Location = new System.Drawing.Point(90, 44);
-            this.textEditDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEditDescription.Location = new System.Drawing.Point(74, 30);
             this.textEditDescription.Name = "textEditDescription";
-            this.textEditDescription.Size = new System.Drawing.Size(811, 22);
+            this.textEditDescription.Size = new System.Drawing.Size(715, 20);
             this.textEditDescription.StyleController = this.layoutControl1;
             this.textEditDescription.TabIndex = 5;
             // 
             // textEditCode
             // 
-            this.textEditCode.Location = new System.Drawing.Point(90, 16);
-            this.textEditCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEditCode.Location = new System.Drawing.Point(74, 8);
             this.textEditCode.Name = "textEditCode";
-            this.textEditCode.Size = new System.Drawing.Size(811, 22);
+            this.textEditCode.Size = new System.Drawing.Size(715, 20);
             this.textEditCode.StyleController = this.layoutControl1;
             this.textEditCode.TabIndex = 4;
             // 
@@ -221,7 +195,7 @@
             this.layoutControlItem6,
             this.layoutControlItem7});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(914, 600);
+            this.Root.Size = new System.Drawing.Size(800, 450);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -229,69 +203,69 @@
             this.layoutControlItem1.Control = this.textEditCode;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(892, 28);
+            this.layoutControlItem1.Size = new System.Drawing.Size(782, 22);
             this.layoutControlItem1.Text = "Code";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(63, 16);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(53, 13);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 405);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 309);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(892, 136);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(782, 103);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textEditDescription;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 28);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 22);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(892, 28);
+            this.layoutControlItem2.Size = new System.Drawing.Size(782, 22);
             this.layoutControlItem2.Text = "Description";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(63, 16);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(53, 13);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.calcEditCost;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 56);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 44);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(892, 28);
+            this.layoutControlItem3.Size = new System.Drawing.Size(782, 22);
             this.layoutControlItem3.Text = "Cost";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(63, 16);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(53, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.calcEditPrice;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 84);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 66);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(892, 28);
+            this.layoutControlItem4.Size = new System.Drawing.Size(782, 22);
             this.layoutControlItem4.Text = "Price";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(63, 16);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(53, 13);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.simpleButtonSave;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 541);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 412);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(446, 33);
+            this.layoutControlItem5.Size = new System.Drawing.Size(391, 24);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.simpleButtonClose;
-            this.layoutControlItem6.Location = new System.Drawing.Point(446, 541);
+            this.layoutControlItem6.Location = new System.Drawing.Point(391, 412);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(446, 33);
+            this.layoutControlItem6.Size = new System.Drawing.Size(391, 24);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.grdProductCategoryID;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 112);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 88);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(892, 293);
+            this.layoutControlItem7.Size = new System.Drawing.Size(782, 221);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -301,11 +275,10 @@
             // 
             // ProductDF
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.layoutControl1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductDF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Product";
@@ -355,7 +328,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private BindingSource bsProductCategoryID;
-        private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colCode;
         private DevExpress.XtraGrid.Columns.GridColumn colDescription;
     }
