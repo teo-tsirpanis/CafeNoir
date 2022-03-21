@@ -15,7 +15,9 @@ namespace CafeNoir {
             NewTransaction = new Transaction() {
                 CustomerID = coffeeShop.Customers[0].ID,
                 EmployeeID = employee.ID,
-                Date = DateTime.Now
+                Date = DateTime.Now,
+                EmployeeName = employee.Name
+                
             };
 
         }
@@ -80,7 +82,8 @@ namespace CafeNoir {
                 Quantity = Convert.ToInt32(spinEditQuantity.Text),
                 Price = selectedProduct.Price,
                 TotalPrice = Convert.ToInt32(spinEditQuantity.Text) * selectedProduct.Price,
-                DisplayPrice = Convert.ToInt32(spinEditQuantity.Text) * selectedProduct.Price
+                DisplayPrice = Convert.ToInt32(spinEditQuantity.Text) * selectedProduct.Price,
+                ProductDes = selectedProduct.Description
             };
 
             THandler.AddTransLine(NewTransaction, newTransactionLine);
